@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>contacts</title>
+</head>
+<body>
+    <div id="wrapper">
+        <section>
+            <div class="dynamicContent">
+                <!--content -->
+                <div class="box">
+                    <h1>contact us</h1>
+                    <div class="table">
+                        <strong class="text">Intimate Encounters</strong>
+                    </div>
+                    <div class="clear"></div>
+
+                    <h3>contact Form</h3>
+
+                    <div id="note"></div>
+                    <div id="fields">
+                        <form id="ajax-contact-form" action="javascript:alert('success!');">
+                            <div class="left">
+                                <div class="clear"></div>
+
+                                <INPUT type="text" name="name" value="Your full name:" onBlur="if(this.value=='') this.value='Your full name:'" onFocus="if(this.value =='Your full name:' ) this.value=''">
+                                <div class="clear"></div>
+
+                                <INPUT type="text" name="email" value="Your email:" onBlur="if(this.value=='') this.value='Your email:'" onFocus="if(this.value =='Your email:' ) this.value=''">
+                                <div class="clear"></div>
+
+                                <INPUT type="text" name="phone" value="Phone number:" onBlur="if(this.value=='') this.value='Phone number:'" onFocus="if(this.value =='Phone number:' ) this.value=''">
+                                <div class="clear"></div>
+                            </div>
+
+                            <div class="left pad_left1">
+                                <div class="clear"></div>
+                                <TEXTAREA NAME="content" onBlur="if(this.value=='') this.value='Message:'" onFocus="if(this.value =='Message:' ) this.value=''">Message:</TEXTAREA>
+                                <div class="clear"></div>
+                                <INPUT class="submit" type="submit" name="submit" value="submit">
+                                <div class="clear"></div>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="clear"></div>                                             
+                        </form>
+                    </div>
+                </div>        
+                <!--content end -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        if (window.jQuery) {
+            $("a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'dark',social_tools:false,allow_resize: true,default_width: 500,default_height: 344});
+        } else {
+            window.location = '/';
+        }
+    </script>
+</body>
+</html>

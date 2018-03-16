@@ -1,0 +1,8 @@
+#blue { background: #0001dd; color: #fff; font-size: 16px; line-height: 24px; font-family: 'pf_easta_sevenregular'; display: none; }
+#blue p { margin: 35px 0 0 50px; width: 800px; }
+
+#kernal { background: url(images/screen_mac.png) repeat; display: none; }
+#kernal .image { background: url(images/kernel.jpg) no-repeat 0 0; width: 880px; display: inline-block; position: absolute; left: 50%; top: 50%; margin: -278px 0 0 -440px; }
+
+#broken { background: url(images/broken.gif) repeat; display: none; }
+

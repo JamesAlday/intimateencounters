@@ -1,0 +1,506 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>profile</title>
+    </head>
+    <body>
+    
+    <script type="text/javascript" src="./sweetdate/js/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="./sweetdate/js/modernizr.foundation.js"></script>
+    
+    <style>
+        .header-bg {
+            background:#0076A3 url("./sweetdate/images/blue_pattern.gif"); 
+        }
+        #header, #header .form-header .lead, #header label {color:#ffffff;} 
+        #header a:not(.button), div#main .widgets-container.sidebar_location .form-search a:not(.button), .form-search.custom input[type="text"],.form-search.custom input[type="password"], .form-search.custom select {color:#ffffff;} 
+        #header a:not(.button):hover,#header a:not(.button):focus{color:#ffffff;}
+        .top-bar ul > li:not(.name):hover, .top-bar ul > li:not(.name).active, .top-bar ul > li:not(.name):focus { background: #1FA8D1;}
+        #header .top-bar ul > li:hover:not(.name) a {color:#ffffff}; 
+        .top-bar ul > li:not(.name):hover a, .top-bar ul > li:not(.name).active a, .top-bar ul > li:not(.name):focus a { color: #ffffff; }
+        .top-bar ul > li.has-dropdown .dropdown:before { border-color: transparent transparent #1FA8D1 transparent; }
+        .top-bar ul > li.has-dropdown .dropdown li a {color: #ffffff;background: #1FA8D1;}
+        .top-bar ul > li.has-dropdown .dropdown li a:hover,.top-bar ul > li.has-dropdown .dropdown li a:focus { background: #37b8dd;}
+        .top-bar ul > li.has-dropdown .dropdown li.has-dropdown .dropdown:before {border-color: transparent #1FA8D1 transparent transparent;}
+        .lt-ie9 .top-bar section > ul > li a:hover, .lt-ie9 .top-bar section > ul > li a:focus { color: #ffffff; }
+        .lt-ie9 .top-bar section > ul > li:hover, .lt-ie9 .top-bar section > ul > li:focus { background: #1FA8D1; }
+        .lt-ie9 .top-bar section > ul > li.active { background: #1FA8D1; color: #ffffff; }
+        #breadcrumbs-wrapp {background:#92bc14; }
+        #breadcrumbs-wrapp, ul.breadcrumbs li:before {color:#f0f0f0;}
+        #breadcrumbs-wrapp a{color:#ffffff;} 
+        #breadcrumbs-wrapp a:hover,#breadcrumbs-wrapp a:focus{color:#7de0fe;}
+        .kleo-page {background:#ffffff; }
+        div#main {color:#777777;}
+        a:not(.button),div#main a:not(.button):not(.elementor-button), #header .form-footer a:not(.button){color:#333333;} 
+        div#main a:not(.button):not(.elementor-button):hover, a:not(.button):not(.elementor-button):hover,a:not(.button):focus,div#main a:not(.button):focus{color:#0296C0;}
+        div#main .widgets-container.sidebar_location {color:#777777;} 
+        div#main .widgets-container.sidebar_location a:not(.button){color:#666666;} 
+        div#main .widgets-container.sidebar_location a:not(.button):hover,div#main a:not(.button):focus{color:#0296C0;}
+        #footer {background:#171717 url("https://seventhqueen.com/demo/sweetdatewp/wp-content/themes/sweetdate/assets/images/patterns/black_pattern.gif"); }
+        #footer, #footer .footer-social-icons a:not(.button), #footer h5{color:#777777;} 
+        #footer a:not(.button){color:#F00056;} 
+        #footer a:not(.button):hover,#footer a:not(.button):focus{color:#0296C0;}
+        h1 {font: normal 46px 'Lato'; color: #222222;}
+        h2 {font: normal 30px 'Lato'; color: #222222;}
+        h3 {font: normal 26px 'Lato'; color: #222222;}
+        h4 {font: normal 20px 'Open Sans'; color: #222222;}
+        h5 {font: normal 17px 'Open Sans'; color: #222222;}
+        h6 {font: normal 14px 'Open Sans'; color: #222222;}
+        body, p, div {font: normal 13px 'Open Sans';}
+        .form-search, .form-header, div.alert-box, div.pagination span.current {background:#0296c0}
+        .top-links, .top-links a, .circular-progress-item input, .ajax_search_image .icon{color: #0296c0;}
+        .form-search .notch {border-top: 10px solid #0296c0;}
+        .form-search.custom div.custom.dropdown a.current, .form-search.custom input[type="text"],.form-search.custom input[type="password"], .form-search.custom select {background-color: #1FA8D1; }
+        .form-search.custom div.custom.dropdown a.selector, .form-search.custom div.custom.dropdown a.current, .form-search.custom select { border: solid 1px #1FA8D1; }
+        .form-search.custom input[type="text"],.form-search.custom input[type="password"] {border: 1px solid #0296c0 }
+        .form-header, div.alert-box {color:#ffffff}
+        .mejs-controls .mejs-time-rail .mejs-time-loaded{background-color: #1FA8D1; }
+        .form-search {border-left: 10px solid rgba(31, 168, 209, 0.3);  border-right: 10px solid rgba(31, 168, 209, 0.3);}
+        .form-header {border-left: 10px solid rgba(31, 168, 209, 0.3); border-top: 10px solid rgba(31, 168, 209, 0.3);  border-right: 10px solid rgba(31, 168, 209, 0.3);}
+        .tabs.pill.custom dd.active a, .tabs.pill.custom li.active a, div.item-list-tabs ul li a span, #profile .pmpro_label {background: #0296c0; color: #ffffff;}
+        .tabs.pill.custom dd.active a:after {border-top: 10px solid #0296c0}
+        .tabs.info dd.active a, .tabs.info li.active a, #object-nav ul li.current a, #object-nav ul li.selected a, .tabs.info dd.active, .tabs.info li.active, #object-nav ul li.selected, #object-nav ul li.current {border-bottom: 2px solid #0296c0;}
+        .tabs.info dd.active a:after, #object-nav ul li.current a:after, #object-nav ul li.selected a:after {border-top:5px solid #0296c0;}
+        div.item-list-tabs li#members-all.selected, div.item-list-tabs li#members-personal.selected, .section-members .item-options .selected {border-bottom: 3px solid #0296c0;} 
+        div.item-list-tabs li#members-all.selected:after, div.item-list-tabs li#members-personal.selected:after, .section-members .item-options .selected:after {border-top: 5px solid #0296c0}
+        .button, ul.sub-nav li.current a, .item-list-tabs ul.sub-nav li.selected a, #subnav ul li.current a, .wpcf7-submit { border: 1px solid #0296c0; background: #0296c0; color: #ffffff; }
+        .button:hover, .button:focus, .form-search .button, .form-search .button:hover, .form-search .button:focus, .wpcf7-submit:focus, .wpcf7-submit:hover { color: #ffffff; background-color: #1FA8D1; border: 1px solid #1FA8D1; }
+        .button.secondary,.button.dropdown.split.secondary > a, #messages_search_submit,.bp-member-dir-buttons div.generic-button a.add,.bp-member-dir-buttons div.generic-button a.remove { background-color: #E6E6E6; color: #1D1D1D; border: 1px solid #E6E6E6; }
+        .button.secondary:hover, .button.secondary:focus, .button.dropdown.split.secondary > a:hover, .button.dropdown.split.secondary > a:focus, #messages_search_submit:hover, #messages_search_submit:focus, .bp-member-dir-buttons div.generic-button a.add:hover,.bp-member-dir-buttons div.generic-button a.remove:hover { background-color: #DDDCDC;  border: 1px solid #DDDCDC; color: #1D1D1D; }
+        .btn-profile .button.dropdown > ul, .button.dropdown.split.secondary > span {background: #E6E6E6;}
+        .button.dropdown.split.secondary > span:hover, .button.dropdown.split.secondary > span:focus { background-color: #DDDCDC; color: #1D1D1D;}
+        #header .btn-profile a:not(.button) {color: #1D1D1D;}
+        #header .btn-profile .button.dropdown > ul li:hover a:not(.button),#header .btn-profile .button.dropdown > ul li:focus a:not(.button) {background-color: #DDDCDC; color:#1D1D1D;}
+        .button.bordered { background-color: #fff; border: 1px solid #E6E6E6; color: #1D1D1D; }
+        .button.bordered:hover,.button.bordered:focus { background-color: #DDDCDC; border: 1px solid #DDDCDC; color: #1D1D1D; }
+        div#profile {background:#92bc14; }
+        #profile, #profile h2, #profile span {color:#ffffff;}
+        #profile .cite a, #profile .regulartab a, #profile .btn-carousel a {color:#ffffff;} 
+        #profile .cite a:hover,#profile .cite a:focus, #profile .regulartab a:hover, #profile .regulartab a:focus, .callout .bp-profile-details:before{color:#09a9d9;}
+        #profile .tabs.pill.custom dd.active a, #profile .pmpro_label {background: #09a9d9 }
+        #profile:after {border-color:#92bc14 transparent transparent transparent;}
+        #item-header-avatar img, .mySlider img {border-color: rgba(255,255,255,0.1) !important;}
+        #profile .generic-button a, .tabs.pill.custom dd:not(.active) a, #profile .callout, .regulartab dt, .regulartab dd {background: rgba(255,255,255,0.1); color: #ffffff;}
+        #profile hr {border-color: rgba(255,255,255,0.1);}
+        @media only screen and (max-width: 940px) {
+            .top-bar ul > li:not(.name):hover, .top-bar ul > li:not(.name).active, .top-bar ul > li:not(.name):focus { background: #37b8dd; }
+            .top-bar { background: #1FA8D1; }
+            .top-bar > ul .name h1 a { background: #37b8dd; }
+            .top-bar ul > li.has-dropdown.moved > .dropdown li a:hover { background: #37b8dd; display: block; }
+            .top-bar ul > li.has-dropdown .dropdown li.has-dropdown > a li a:hover, .top-bar ul > li.toggle-topbar { background: #37b8dd; }
+        }
+        @media screen and (max-width: 600px) {
+            #wpadminbar { position: fixed; }
+        }
+        @media screen and ( max-width: 782px ) {
+            .adminbar-enable .sticky.fixed { margin-top: 46px; }
+        }
+    </style>
+        <div id="wrapper">
+            <section>
+                <div class="dynamicContent">
+<!-- PROFILE SECTION 
+        ================================================ -->
+        <section>
+            <div id="profile">
+                <a id="header-cover-image"></a>
+                <div class="row">
+                    <div class="five columns">
+                        <h2>jasdeep-singh</h2>
+                        <span class="user-nicename">@jasdeep-singh</span>
+                        <span class="activity"><i class="icon-time"></i> active 2 months, 1 week ago</span>
+                        <p>&nbsp;</p>
+                        <div class="row">
+                            <div id="item-header-avatar" class="eight columns image-hover">
+                                <img src="./sweetdate/images/5a202fc80dacc-bpfull.jpg" class="avatar user-35356-avatar avatar-580 photo" width="580" height="580" alt="Profile picture of jasdeep-singh">                       
+                            </div>
+                            <div class="two columns pull-two">
+                                <div id="item-buttons">
+                                    <div id="friendship-button-" class="generic-button friendship-button not_friends">
+                                        <a data-reveal-id="login_panel" class="has-tip tip-right friendship-button not_friends add" data-width="350" rel="add" id="friend-" title="Please Login to Add Friend" href="#">Add Friend</a>
+                                    </div>
+                                    <div id="post-mention" class="generic-button">
+                                        <a data-reveal-id="login_panel" class="has-tip tip-right activity-button mention" data-width="350" title="Please Login to Send a public message" href="#">Public Message</a>
+                                    </div>
+                                    <div id="send-private-message" class="generic-button">
+                                        <a data-reveal-id="login_panel" class="has-tip tip-right send-message" data-width="350" title="Please Login to Send a private message" href="#">Private Message</a>
+                                    </div>                                    
+                                </div>
+                                <!-- #item-buttons -->
+                            </div>
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end five-->
+    
+                    <div class="seven columns">
+                        <dl class="tabs pill custom">
+                            <dd class="active">
+                                <a href="#about-me">About me</a>
+                            </dd>
+                        </dl>
+                        <ul class="tabs-content custom">
+                            <li id="looking-forTab" class=" citetab"></li>
+                            <li active="" id="about-meTab" class="active regulartab">
+                                <dl class="dl-horizontal">
+                                    <dt class="bp-field-name bp-field-id-1">Name</dt>
+                                    <dd class="bp-field-value bp-field-id-1"><p>jasdeep-singh</p></dd>
+                                    <dt class="bp-field-name bp-field-id-3">I am a</dt>
+                                    <dd class="bp-field-value bp-field-id-3"><p><a href="https://seventhqueen.com/demo/sweetdatewp/members/?members_search=Man" rel="nofollow">Man</a></p></dd>
+                                    <dt class="bp-field-name bp-field-id-6">Looking for a</dt>
+                                    <dd class="bp-field-value bp-field-id-6"><p><a href="https://seventhqueen.com/demo/sweetdatewp/members/?members_search=Woman" rel="nofollow">Woman</a></p></dd>
+                                    <dt class="bp-field-name bp-field-id-2">Birthday</dt>
+                                    <dd class="bp-field-value bp-field-id-2"><p>1992-01-01</p></dd>
+                                    <dt class="bp-field-name bp-field-id-9">Marital status</dt>
+                                    <dd class="bp-field-value bp-field-id-9"><p><a href="https://seventhqueen.com/demo/sweetdatewp/members/?members_search=Single" rel="nofollow">Single</a></p></dd>
+                                    <dt class="bp-field-name bp-field-id-17">City</dt><dd class="bp-field-value bp-field-id-17"><p>Chandigarh</p></dd>
+                                    <dt class="bp-field-name bp-field-id-18">Country</dt><dd class="bp-field-value bp-field-id-18"><p>India</p></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--end row-->
+            </div>
+            <!--end profile-->
+        </section>
+        <!--END PROFILE SECTION-->
+
+        <!-- MAIN SECTION
+        ================================================ -->
+        <section>
+            <div id="main">
+                <div class="row">
+                    <!--begin content-->
+                    <div id="main-content" class="eight columns ">
+                        <div class="row">
+                            <div class="twelve columns">
+                                <div class="article-content">
+                                    <div id="buddypress">
+                                        <div id="item-nav">
+                                            <div class="item-list-tabs no-ajax" id="object-nav" aria-label="Member primary navigation" role="navigation">
+                                                <ul>
+                                                    <li id="activity-personal-li" class="current selected"><a id="user-activity" href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/activity/">Activity</a></li>
+                                                    <li id="xprofile-personal-li"><a id="user-xprofile">Profile</a></li>
+                                                    <li id="friends-personal-li"><a id="user-friends">Friends <span class="no-count">0</span></a></li>
+                                                    <li id="groups-personal-li"><a id="user-groups">Groups <span class="no-count">0</span></a></li>
+                                                    <li id="forums-personal-li"><a id="user-forums">Forums</a></li>
+                                                    <li id="media-personal-li"><a id="user-media">Media <span>0</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- #item-nav -->
+                                        
+                                        <div id="item-body">
+                                            <div class="item-list-tabs no-ajax" id="subnav" aria-label="Member secondary navigation" role="navigation">
+                                                <ul>
+                                                    <li id="just-me-personal-li" class="current selected"><a id="just-me" href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/activity/">Personal</a></li>
+                                                    <li id="activity-mentions-personal-li"><a id="activity-mentions" href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/activity/mentions/">Mentions</a></li>
+                                                    <li id="activity-favs-personal-li"><a id="activity-favs" href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/activity/favorites/">Favorites</a></li>
+                                                    <li id="activity-friends-personal-li"><a id="activity-friends" href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/activity/friends/">Friends</a></li>
+                                                    <li id="activity-groups-personal-li"><a id="activity-groups" href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/activity/groups/">Groups</a></li>
+                                                    <li id="activity-filter-select" class="last">
+                                                        <label for="activity-filter-by">Show:</label>
+                                                        <select id="activity-filter-by">
+                                                            <option value="-1">— Everything —</option>
+                                                            <option value="activity_update">Updates</option>
+                                                            <option value="friendship_accepted,friendship_created">Friendships</option>
+                                                            <option value="group_details_updated">Group Updates</option>
+                                                            <option value="created_group">New Groups</option>
+                                                            <option value="joined_group">Group Memberships</option>
+                                                            <option value="new_blog_post">Posts</option>
+                                                            <option value="new_blog_comment">Comments</option>                
+                                                            <option value="bbp_topic_create">Topics</option>
+                                                            <option value="bbp_reply_create">Replies</option>
+                                                       </select>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- .item-list-tabs -->
+
+                                            <div class="activity" aria-live="polite" aria-atomic="true" aria-relevant="all">
+                                                <ul id="activity-stream" class="activity-list item-list">
+                                                    <li class="profile new_avatar activity-item mini" id="activity-38691">
+                                                        <div class="activity-avatar">
+                                                            <a href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/">
+                                                                <img src="./sweetdate/images/5a202fc82072b-bpthumb.jpg" class="avatar user-35356-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of jasdeep-singh" data-src="https://seventhqueen.com/demo/sweetdatewp/wp-content/uploads/avatars/35356/5a202fc82072b-bpthumb.jpg" style="display: inline-block;">
+                                                            </a>
+                                                        </div>
+                                                        <div class="activity-content">
+                                                            <div class="activity-header">
+                                                                <p><a href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/">jasdeep-singh</a> changed their profile picture <a href="https://seventhqueen.com/demo/sweetdatewp/activity/p/38691/" class="view activity-time-since bp-tooltip" data-bp-tooltip="View Discussion"><span class="time-since">2 months ago</span></a></p>
+                                                            </div>
+                                                            <div class="activity-meta"></div>
+                                                        </div>
+                                                        <div class="activity-comments"></div>
+                                                    </li>
+                                                    <li class="xprofile updated_profile activity-item mini has-comments" id="activity-38690">
+                                                        <div class="activity-avatar" style="border:none;-webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;">
+                                                            <a href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/">
+                                                                <img src="./sweetdate/images/blank.png" class="avatar user-35356-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of jasdeep-singh" data-src="https://seventhqueen.com/demo/sweetdatewp/wp-content/uploads/avatars/35356/5a202fc82072b-bpthumb.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="activity-content">
+                                                            <div class="activity-header">
+                                                                <p><a href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/profile/">jasdeep-singh</a>‘s profile was updated <a href="https://seventhqueen.com/demo/sweetdatewp/activity/p/38690/" class="view activity-time-since bp-tooltip" data-bp-tooltip="View Discussion"><span class="time-since">2 months ago</span></a></p>
+                                                            </div>
+                                                            <div class="activity-meta"></div>
+                                                        </div>
+                                                        <div class="activity-comments">
+                                                            <ul>
+                                                                <li id="acomment-38814">
+                                                                    <div class="acomment-avatar">
+                                                                        <a href="https://seventhqueen.com/demo/sweetdatewp/members/demo/">
+                                                                            <img src="./sweetdate/images/blank.png" class="avatar user-179-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of User demo" data-src="./sweetdate/images/5a7842a119a6d-bpthumb.jpg">      
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="acomment-meta">
+                                                                        <a href="https://seventhqueen.com/demo/sweetdatewp/members/demo/">User demo</a> replied <a href="https://seventhqueen.com/demo/sweetdatewp/activity/p/38690/#acomment-38814" class="activity-time-since"><span class="time-since">a month ago</span></a>    
+                                                                    </div>
+                                                                    <div class="acomment-content"><p>rttr</p></div>
+                                                                    <div class="acomment-options"></div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="load-more">
+                                                        <a href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/?acpage=2">Load More</a>
+                                                    </li>
+                                                </ul>
+
+                                                <form action="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/" name="activity-loop-form" id="activity-loop-form" method="post">
+                                                    <input type="hidden" id="_wpnonce_activity_filter" name="_wpnonce_activity_filter" value="94c71a8bb1">
+                                                    <input type="hidden" name="_wp_http_referer" value="/demo/sweetdatewp/members/jasdeep-singh/">
+                                                </form>
+                                            </div>
+                                            <!-- .activity -->
+                                        </div>
+                                        <!-- #item-body -->
+                                    </div>
+                                    <!-- #buddypress -->
+                                </div>
+                                <!--end article-content-->
+                            </div>
+                            <!--end twelve-->
+                        </div>
+                        <!--end row-->
+                        <!-- End  Article -->
+                    </div>
+                    <!--end content-->
+  
+                    <!-- SIDEBAR SECTION
+                    ================================================ -->
+                    <aside class="four columns">
+                        <div class="widgets-container sidebar_location">
+                            <div id="bp_core_members_widget-7" class="widgets clearfix widget_bp_core_members_widget buddypress widget">
+                                <h5>Members</h5>        
+                                <div class="item-options" id="members-list-options">
+                                    <a href="https://seventhqueen.com/demo/sweetdatewp/members/" id="newest-members">Newest</a>
+                                    <span class="bp-separator" role="separator">|</span>
+                                    <a href="https://seventhqueen.com/demo/sweetdatewp/members/" id="recently-active-members" class="selected">Active</a>
+                                    <span class="bp-separator" role="separator">|</span>
+                                    <a href="https://seventhqueen.com/demo/sweetdatewp/members/" id="popular-members">Popular</a>
+                                </div>
+                                <ul id="members-list" class="item-list" aria-live="polite" aria-relevant="all" aria-atomic="true">
+                                    <li class="vcard">
+                                        <div class="item-avatar">
+                                            <a href="https://seventhqueen.com/demo/sweetdatewp/members/demo/" class="bp-tooltip" data-bp-tooltip="User demo"><img src="./sweetdate/images/5a7842a119a6d-bpthumb.jpg" class="avatar user-179-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of User demo"></a>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-title fn">
+                                                <a href="https://seventhqueen.com/demo/sweetdatewp/members/demo/">User demo</a>
+                                            </div>
+                                            <div class="item-meta">
+                                                <span class="activity">3 hours ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="vcard">
+                                        <div class="item-avatar">
+                                            <a href="https://seventhqueen.com/demo/sweetdatewp/members/robert-christopher/" class="bp-tooltip" data-bp-tooltip="robert-christopher">
+                                                <img src="./sweetdate/images/picture" class="avatar user-35452-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of robert-christopher"></a>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-title fn">
+                                                <a href="https://seventhqueen.com/demo/sweetdatewp/members/robert-christopher/">robert-christopher</a>
+                                            </div>
+                                            <div class="item-meta">
+                                                <span class="activity">a day ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="vcard">
+                                        <div class="item-avatar">
+                                            <a href="https://seventhqueen.com/demo/sweetdatewp/members/john-david-crockett/" class="bp-tooltip" data-bp-tooltip="john-david-crockett">
+                                                <img src="./sweetdate/images/picture(1)" class="avatar user-34489-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of john-david-crockett">
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-title fn">
+                                                <a href="https://seventhqueen.com/demo/sweetdatewp/members/john-david-crockett/">john-david-crockett</a>
+                                            </div>
+                                            <div class="item-meta">
+                                                <span class="activity">a day ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="vcard">
+                                        <div class="item-avatar">
+                                            <a href="https://seventhqueen.com/demo/sweetdatewp/members/eduardo-alves/" class="bp-tooltip" data-bp-tooltip="eduardo-alves">
+                                                <img src="./sweetdate/images/picture(2)" class="avatar user-35451-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of eduardo-alves">
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-title fn">
+                                                <a href="https://seventhqueen.com/demo/sweetdatewp/members/eduardo-alves/">eduardo-alves</a>
+                                            </div>
+                                            <div class="item-meta">
+                                                <span class="activity">4 days ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="vcard">
+                                        <div class="item-avatar">
+                                            <a href="https://seventhqueen.com/demo/sweetdatewp/members/serafim-zagadochny/" class="bp-tooltip" data-bp-tooltip="serafim-zagadochny">
+                                                <img src="./sweetdate/images/picture(3)" class="avatar user-35450-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of serafim-zagadochny">
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-title fn">
+                                                <a href="https://seventhqueen.com/demo/sweetdatewp/members/serafim-zagadochny/">serafim-zagadochny</a>
+                                            </div>
+                                            <div class="item-meta">
+                                                <span class="activity">5 days ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                                <input type="hidden" id="_wpnonce-members" name="_wpnonce-members" value="945dcbfeae">
+                                <input type="hidden" name="members_widget_max" id="members_widget_max" value="5">
+                            </div>
+
+                            <div id="bp_groups_widget-5" class="widgets clearfix widget_bp_groups_widget buddypress widget">
+                                <h5>Groups</h5>
+                                <div class="item-options" id="groups-list-options">
+                                    <a href="https://seventhqueen.com/demo/sweetdatewp/groups/" id="newest-groups">Newest</a>
+                                    <span class="bp-separator" role="separator">|</span>
+                                    <a href="https://seventhqueen.com/demo/sweetdatewp/groups/" id="recently-active-groups" class="selected">Active</a>
+                                    <span class="bp-separator" role="separator">|</span>
+                                    <a href="https://seventhqueen.com/demo/sweetdatewp/groups/" id="popular-groups">Popular</a>
+                                    <span class="bp-separator" role="separator">|</span>
+                                    <a href="https://seventhqueen.com/demo/sweetdatewp/groups/" id="alphabetical-groups">Alphabetical</a>
+                                </div>
+
+                                <ul id="groups-list" class="item-list" aria-live="polite" aria-relevant="all" aria-atomic="true">
+                                    <li class="odd public group-has-avatar">
+                                        <div class="item-avatar">
+                                            <a href="https://seventhqueen.com/demo/sweetdatewp/groups/couples/" class="bp-tooltip" data-bp-tooltip="Couples"><img src="./sweetdate/images/9458c0f0a7b14da7113731e2bb728e18-bpthumb.png" class="avatar group-1-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Couples"></a>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-title"><a href="https://seventhqueen.com/demo/sweetdatewp/groups/couples/" class="bp-group-home-link couples-home-link">Couples</a></div>
+                                            <div class="item-meta">
+                                                <span class="activity">active 1 week, 2 days ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="even public group-has-avatar">
+                                        <div class="item-avatar">
+                                            <a href="https://seventhqueen.com/demo/sweetdatewp/groups/site-lovers/" class="bp-tooltip" data-bp-tooltip="Site lovers"><img src="./sweetdate/images/e206e412862fb75fb0a2de76e08f65b5-bpthumb.jpg" class="avatar group-2-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Site lovers"></a>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-title"><a href="https://seventhqueen.com/demo/sweetdatewp/groups/site-lovers/" class="bp-group-home-link site-lovers-home-link">Site lovers</a></div>
+                                            <div class="item-meta">
+                                                <span class="activity">active 1 month ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="odd public group-has-avatar">
+                                        <div class="item-avatar">
+                                            <a href="https://seventhqueen.com/demo/sweetdatewp/groups/fast-food-junkies/" class="bp-tooltip" data-bp-tooltip="Fast food Junkies"><img src="./sweetdate/images/3972d959ae380e0b63d868aef8c43328-bpthumb.jpg" class="avatar group-66-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Fast food Junkies"></a>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-title"><a href="https://seventhqueen.com/demo/sweetdatewp/groups/fast-food-junkies/" class="bp-group-home-link fast-food-junkies-home-link">Fast food Junkies</a></div>
+                                            <div class="item-meta">
+                                                <span class="activity">active 1 month, 2 weeks ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="even public group-has-avatar">
+                                        <div class="item-avatar">
+                                            <a href="https://seventhqueen.com/demo/sweetdatewp/groups/virtual-only/" class="bp-tooltip" data-bp-tooltip="Virtual only"><img src="./sweetdate/images/a1071409170939d689457fae71708145-bpthumb.png" class="avatar group-3-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Virtual only"></a>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-title"><a href="https://seventhqueen.com/demo/sweetdatewp/groups/virtual-only/" class="bp-group-home-link virtual-only-home-link">Virtual only</a></div>
+                                            <div class="item-meta">
+                                                <span class="activity">active 4 months ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="odd private group-has-avatar">
+                                        <div class="item-avatar">
+                                            <a href="https://seventhqueen.com/demo/sweetdatewp/groups/vip-users/" class="bp-tooltip" data-bp-tooltip="VIP Users"><img src="./sweetdate/images/50b4ae2fffd8596b684c7d2111b9e1c9-bpthumb.png" class="avatar group-6-avatar avatar-120 photo" width="120" height="120" alt="Group logo of VIP Users"></a>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="item-title"><a href="https://seventhqueen.com/demo/sweetdatewp/groups/vip-users/" class="bp-group-home-link vip-users-home-link">VIP Users</a></div>
+                                            <div class="item-meta">
+                                                <span class="activity">active 4 years, 6 months ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                                <input type="hidden" id="_wpnonce-groups" name="_wpnonce-groups" value="276ce3cac7">
+                                <input type="hidden" name="_wp_http_referer" value="/demo/sweetdatewp/members/jasdeep-singh/">          
+                                <input type="hidden" name="groups_widget_max" id="groups_widget_max" value="5">       
+                            </div>
+
+                            <div id="bbp_replies_widget-3" class="widgets clearfix widget_display_replies">
+                                <h5>Recent Replies</h5>
+                                <ul>
+                                    <li><a class="bbp-reply-topic-title" href="https://seventhqueen.com/demo/sweetdatewp/forums/topic/od-kiedz-jestes-wege/#post-6954" title="lol">Od kiedz jestes wege</a></li>
+                                    <li><a class="bbp-reply-topic-title" href="https://seventhqueen.com/demo/sweetdatewp/forums/topic/so-im-cheating-my-boyfriend-with-my-self-and-that-thing-kills-me/#post-6925" title="blan blan">So I'm cheating my boyfriend with my self and that thing kills me</a></li>
+                                    <li><a class="bbp-reply-topic-title" href="https://seventhqueen.com/demo/sweetdatewp/forums/topic/so-im-cheating-my-boyfriend-with-my-self-and-that-thing-kills-me/#post-6717" title="ok">So I'm cheating my boyfriend with my self and that thing kills me</a></li>
+                                    <li><a class="bbp-reply-topic-title" href="https://seventhqueen.com/demo/sweetdatewp/forums/topic/so-im-cheating-my-boyfriend-with-my-self-and-that-thing-kills-me/#post-6672" title="good coz ur bf is a sorry a*s p**sy lol        T…">So I'm cheating my boyfriend with my self and that thing kills me</a></li>
+                                    <li><a class="bbp-reply-topic-title" href="https://seventhqueen.com/demo/sweetdatewp/forums/topic/age-difference/#post-6651" title="Any age difference is fine, I think. So far, they…">Age Difference</a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </aside> 
+                    <!--end four columns-->
+                    <!--END SIDEBAR SECTION-->
+                </div>
+                <!--end row-->
+            </div>
+            <!--end main-->
+        </section>
+        <!--END MAIN SECTION-->
+                    <!--content end -->
+                </div>
+            </section>
+        </div>
+        <!-- <script type="text/javascript" src="js/request_url.js"></script> -->
+        <script>
+            if (window.jQuery) {
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/frontend.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/print.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/bbpress.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/mentions.min.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/buddypress.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/styles.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/settings.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/foundation-nonresponsive.min.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/font-awesome.min.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/app.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/responsive.css'});
+                $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/inline.css'});
+
+
+                $("a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'dark',social_tools:false,allow_resize: true,default_width: 500,default_height: 344});
+            } else {
+                // window.location = '/';
+            }
+        </script>
+    </body>
+</html>

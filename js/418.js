@@ -1,0 +1,1 @@
+var e=$("body"),n=$('div.content.shadow');e.on("resize",function(e){e.preventDefault();e.stopPropagation();o()});function o(){n.css("top",(e.outerHeight()-n.outerHeight())/2)}
