@@ -37,7 +37,13 @@ body{ background:url(../images/px1.jpg) 0 0 repeat-x #dddcd8; border:0; font: 12
 .top1{width: 825px; position: absolute; left: 20%; margin-left: -120px; top: 0; z-index: 25;}
 
 header{display: inline-block; position: absolute; z-index: 10; left: 20px; top: 170px;}
-.logo { display:block;text-decoration:none;}
+.logo { 
+  display:block;
+  text-decoration:none;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.5)
+}
 
 .top2{width: 825px; height: 53px; position: absolute; left: 0; top: 282px; z-index: 30;}
 
