@@ -8,7 +8,6 @@ console.log(hashString);
 
 console.log(".html " +(siteHref.lastIndexOf(".html") != -1));
 console.log(".htm "+(siteHref.lastIndexOf(".htm") != -1));
-console.log(".php "+(siteHref.lastIndexOf(".php") != -1));
 
 console.log("/? "+(siteHref.lastIndexOf("/?") == -1));
 console.log("/# "+(siteHref.lastIndexOf("/#") == -1));
@@ -16,7 +15,7 @@ console.log("index. "+(siteHref.lastIndexOf("index.") == -1));
 
 
 
-    if (siteHref.lastIndexOf(".html") != -1 && siteHref.lastIndexOf("/?") == -1 && siteHref.lastIndexOf("/#") == -1 && siteHref.lastIndexOf("index.") == -1 || siteHref.lastIndexOf(".htm") != -1 && siteHref.lastIndexOf("/?") == -1 && siteHref.lastIndexOf("/#") == -1 && siteHref.lastIndexOf("index.") == -1 || siteHref.lastIndexOf(".php") != -1 && siteHref.lastIndexOf("/?") == -1 && siteHref.lastIndexOf("/#") == -1 && siteHref.lastIndexOf("index.") == -1) {
+    if (siteHref.lastIndexOf(".html") != -1 && siteHref.lastIndexOf("/?") == -1 && siteHref.lastIndexOf("/#") == -1 && siteHref.lastIndexOf("index.") == -1 || siteHref.lastIndexOf(".htm") != -1 && siteHref.lastIndexOf("/?") == -1 && siteHref.lastIndexOf("/#") == -1 && siteHref.lastIndexOf("index.") == -1 && siteHref.lastIndexOf("/?") == -1 && siteHref.lastIndexOf("/#") == -1 && siteHref.lastIndexOf("index.") == -1) {
 		// document.location.href = siteHref.slice(0, siteHref.lastIndexOf("/"))+'/'+hashString+siteHref.slice(siteHref.lastIndexOf("/") + 1, siteHref.length);
 
 		// console.log('href: '+siteHref.slice(0, siteHref.lastIndexOf("/"))+'/'+hashString+siteHref.slice(siteHref.lastIndexOf("/") + 1, siteHref.length));

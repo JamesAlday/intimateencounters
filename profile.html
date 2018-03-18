@@ -7,7 +7,59 @@
     
     <script type="text/javascript" src="./sweetdate/js/jquery-migrate.min.js"></script>
     <script type="text/javascript" src="./sweetdate/js/modernizr.foundation.js"></script>
-    
+
+    <script id="template-profile-about-me" type="text/template">
+        <dt class="bp-field-name bp-field-id-1">Name</dt>
+        <dd class="bp-field-value bp-field-id-1"><p>{{name}}</p></dd>
+        <dt class="bp-field-name bp-field-id-3">I am a</dt>
+        <dd class="bp-field-value bp-field-id-3"><p><a href="https://seventhqueen.com/demo/sweetdatewp/members/?members_search={{iso_sex1}}" rel="nofollow">{{iso_sex1}}</a></p></dd>
+        <dt class="bp-field-name bp-field-id-6">Looking for a</dt>
+        <dd class="bp-field-value bp-field-id-6"><p><a href="https://seventhqueen.com/demo/sweetdatewp/members/?members_search={{iso_sex2}}" rel="nofollow">{{iso_sex2}}</a></p></dd>
+        <dt class="bp-field-name bp-field-id-2">Birthday</dt>
+        <dd class="bp-field-value bp-field-id-2"><p>{{birthday}}</p></dd>
+        <dt class="bp-field-name bp-field-id-9">Marital status</dt>
+        <dd class="bp-field-value bp-field-id-9"><p><a href="https://seventhqueen.com/demo/sweetdatewp/members/?members_search={{marital_status}}" rel="nofollow">{{marital_status}}</a></p></dd>
+        <dt class="bp-field-name bp-field-id-17">City</dt>
+        <dd class="bp-field-value bp-field-id-17"><p>{{city}}</p></dd>
+        <dt class="bp-field-name bp-field-id-18">State</dt>
+        <dd class="bp-field-value bp-field-id-18"><p>{{state}}</p></dd>
+    </script>
+    <script id="template-activity-stream" type="text/template">
+        <li class="profile new_avatar activity-item mini{{has_comments}}" id="activity-38691">
+            <div class="activity-avatar">
+                <a href="/members/{{username}}/">
+                    <img src="{{avatar_url}}" class="avatar user-35356-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of {{username}}" style="display: inline-block;">
+                </a>
+            </div>
+            <div class="activity-content">
+                <div class="activity-header">
+                    <p>
+                        <a href="/members/{{username}}/">{{username}}</a>{{action}}<a href="/activity/p/38691/" class="view activity-time-since bp-tooltip" data-bp-tooltip="View Discussion">
+                            <span class="time-since">{{time_since}} ago</span>
+                        </a>
+                    </p>
+                </div>
+                <div class="activity-meta"></div>
+            </div>
+            <div class="activity-comments">{{comments}}</div>
+        </li>
+    </script>
+    <script id="template-activity-stream-comment" type="text/template">
+        <ul>
+            <li id="acomment-38814">
+                <div class="acomment-avatar">
+                    <a href="">
+                        <img src="{{avatar_url}}" class="avatar user-179-avatar avatar-120 photo" width="120" height="120" alt="Profile picture">      
+                    </a>
+                </div>
+                <div class="acomment-meta">
+                    <a href="">User {{username}}</a> replied <a href="" class="activity-time-since"><span class="time-since">{{time_ago}}</span></a>    
+                </div>
+                <div class="acomment-content"><p>rttr</p></div>
+                <div class="acomment-options"></div>
+            </li>
+        </ul>
+    </script>
     <link rel="stylesheet" type="text/css" href="./css/profile.css">
         <div id="wrapper">
             <section>
@@ -19,13 +71,13 @@
                 <a id="header-cover-image"></a>
                 <div class="row">
                     <div class="five columns">
-                        <h2>jasdeep-singh</h2>
-                        <span class="user-nicename">@jasdeep-singh</span>
-                        <span class="activity"><i class="icon-time"></i> active 2 months, 1 week ago</span>
+                        <h2></h2>
+                        <span class="user-nicename"></span>
+                        <span id="last_active_ago" class="activity"></span>
                         <p>&nbsp;</p>
                         <div class="row">
                             <div id="item-header-avatar" class="eight columns image-hover">
-                                <img src="./sweetdate/images/5a202fc80dacc-bpfull.jpg" class="avatar user-35356-avatar avatar-580 photo" width="580" height="580" alt="Profile picture of jasdeep-singh">                       
+                                <!-- <img src="./sweetdate/images/5a202fc80dacc-bpfull.jpg" class="avatar avatar-580 photo" width="580" height="580" alt="Profile picture">                        -->
                             </div>
                             <div class="two columns pull-two">
                                 <div id="item-buttons">
@@ -55,20 +107,7 @@
                         <ul class="tabs-content custom">
                             <li id="looking-forTab" class=" citetab"></li>
                             <li active="" id="about-meTab" class="active regulartab">
-                                <dl class="dl-horizontal">
-                                    <dt class="bp-field-name bp-field-id-1">Name</dt>
-                                    <dd class="bp-field-value bp-field-id-1"><p>jasdeep-singh</p></dd>
-                                    <dt class="bp-field-name bp-field-id-3">I am a</dt>
-                                    <dd class="bp-field-value bp-field-id-3"><p><a href="https://seventhqueen.com/demo/sweetdatewp/members/?members_search=Man" rel="nofollow">Man</a></p></dd>
-                                    <dt class="bp-field-name bp-field-id-6">Looking for a</dt>
-                                    <dd class="bp-field-value bp-field-id-6"><p><a href="https://seventhqueen.com/demo/sweetdatewp/members/?members_search=Woman" rel="nofollow">Woman</a></p></dd>
-                                    <dt class="bp-field-name bp-field-id-2">Birthday</dt>
-                                    <dd class="bp-field-value bp-field-id-2"><p>1992-01-01</p></dd>
-                                    <dt class="bp-field-name bp-field-id-9">Marital status</dt>
-                                    <dd class="bp-field-value bp-field-id-9"><p><a href="https://seventhqueen.com/demo/sweetdatewp/members/?members_search=Single" rel="nofollow">Single</a></p></dd>
-                                    <dt class="bp-field-name bp-field-id-17">City</dt><dd class="bp-field-value bp-field-id-17"><p>Chandigarh</p></dd>
-                                    <dt class="bp-field-name bp-field-id-18">Country</dt><dd class="bp-field-value bp-field-id-18"><p>India</p></dd>
-                                </dl>
+                                <dl class="dl-horizontal"></dl>
                             </li>
                         </ul>
                     </div>
@@ -93,7 +132,7 @@
                                         <div id="item-nav">
                                             <div class="item-list-tabs no-ajax" id="object-nav" aria-label="Member primary navigation" role="navigation">
                                                 <ul>
-                                                    <li id="activity-personal-li" class="current selected"><a id="user-activity" href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/activity/">Activity</a></li>
+                                                    <li id="activity-personal-li" class="current selected"><a id="user-activity">Activity</a></li>
                                                     <li id="xprofile-personal-li"><a id="user-xprofile">Profile</a></li>
                                                     <li id="friends-personal-li"><a id="user-friends">Friends <span class="no-count">0</span></a></li>
                                                     <li id="groups-personal-li"><a id="user-groups">Groups <span class="no-count">0</span></a></li>
@@ -133,7 +172,7 @@
 
                                             <div class="activity" aria-live="polite" aria-atomic="true" aria-relevant="all">
                                                 <ul id="activity-stream" class="activity-list item-list">
-                                                    <li class="profile new_avatar activity-item mini" id="activity-38691">
+                                                    <!-- <li class="profile new_avatar activity-item mini" id="activity-38691">
                                                         <div class="activity-avatar">
                                                             <a href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/">
                                                                 <img src="./sweetdate/images/5a202fc82072b-bpthumb.jpg" class="avatar user-35356-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of jasdeep-singh" data-src="https://seventhqueen.com/demo/sweetdatewp/wp-content/uploads/avatars/35356/5a202fc82072b-bpthumb.jpg" style="display: inline-block;">
@@ -175,16 +214,12 @@
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                    </li>
+                                                    </li> -->
+
                                                     <li class="load-more">
                                                         <a href="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/?acpage=2">Load More</a>
                                                     </li>
                                                 </ul>
-
-                                                <form action="https://seventhqueen.com/demo/sweetdatewp/members/jasdeep-singh/" name="activity-loop-form" id="activity-loop-form" method="post">
-                                                    <input type="hidden" id="_wpnonce_activity_filter" name="_wpnonce_activity_filter" value="94c71a8bb1">
-                                                    <input type="hidden" name="_wp_http_referer" value="/demo/sweetdatewp/members/jasdeep-singh/">
-                                                </form>
                                             </div>
                                             <!-- .activity -->
                                         </div>
@@ -393,7 +428,7 @@
                 </div>
             </section>
         </div>
-        <!-- <script type="text/javascript" src="js/request_url.js"></script> -->
+        <script type="text/javascript" src="js/request_url.js"></script>
         <script>
             if (window.jQuery) {
                 $('<link>').appendTo('head').attr({type: 'text/css', rel: 'stylesheet', href: './sweetdate/css/frontend.css'});
@@ -412,8 +447,9 @@
 
                 $("a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'dark',social_tools:false,allow_resize: true,default_width: 500,default_height: 344});
             } else {
-                window.location = '/';
+                // window.location = '/';
             }
         </script>
+        <script type="text/javascript" src="./js/profile.js"></script>
     </body>
 </html>
