@@ -25,7 +25,7 @@ div#main a:not(.button):not(.elementor-button):hover, a:not(.button):not(.elemen
 div#main .widgets-container.sidebar_location {color:#777777;} 
 div#main .widgets-container.sidebar_location a:not(.button){color:#666666;} 
 div#main .widgets-container.sidebar_location a:not(.button):hover,div#main a:not(.button):focus{color:#f00056;}
-#footer {background:#171717 url("https://seventhqueen.com/demo/sweetdatewp/wp-content/themes/sweetdate/assets/images/patterns/black_pattern.gif"); }
+#footer {background:#171717 url("./images/profile/black_pattern.gif"); }
 #footer, #footer .footer-social-icons a:not(.button), #footer h5{color:#777777;} 
 #footer a:not(.button){color:#F00056;} 
 #footer a:not(.button):hover,#footer a:not(.button):focus{color:#f00056;}
