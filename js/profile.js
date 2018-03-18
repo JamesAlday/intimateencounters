@@ -70,8 +70,8 @@ $(document).ready ( function() {
         loadImage(user.global.avatar_url, 580, null, "#item-header-avatar")
 
         // name/username
-        $("div.five.columns h2").html(user.name);
-        $("user-nicename").html("@" + user.username);
+        $("div.five.columns h2").html(user.about.name);
+        $("user-nicename").html("@" + user.global.username);
 
         // last active time
         $("#last_active_ago").html("<i class='icon-time'></i> active " + user.last_active_ago + " ago");
