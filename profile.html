@@ -4,381 +4,379 @@
         <title>profile</title>
     </head>
     <body>
-    
-    <script id="template-profile-about-me" type="text/template">
-        <dt class="bp-field-name bp-field-id-1">Name</dt>
-        <dd class="bp-field-value bp-field-id-1"><p>{{name}}</p></dd>
-        <dt class="bp-field-name bp-field-id-3">I am a</dt>
-        <dd class="bp-field-value bp-field-id-3"><p><a href="/members/?members_search={{iso_sex1}}" rel="nofollow">{{iso_sex1}}</a></p></dd>
-        <dt class="bp-field-name bp-field-id-6">Looking for a</dt>
-        <dd class="bp-field-value bp-field-id-6"><p><a href="/members/?members_search={{iso_sex2}}" rel="nofollow">{{iso_sex2}}</a></p></dd>
-        <dt class="bp-field-iso bp-field-id-23">for a...</dt>
-        <dd class="bp-field-value bp-field-id-23"><p>{{iso}}</p></dd>
-        <dt class="bp-field-name bp-field-id-2">Birthday</dt>
-        <dd class="bp-field-value bp-field-id-2"><p>{{birthday}}</p></dd>
-        <dt class="bp-field-name bp-field-id-9">Marital status</dt>
-        <dd class="bp-field-value bp-field-id-9"><p><a href="/members/?members_search={{marital_status}}" rel="nofollow">{{marital_status}}</a></p></dd>
-        <dt class="bp-field-name bp-field-id-17">City</dt>
-        <dd class="bp-field-value bp-field-id-17"><p>{{city}}</p></dd>
-        <dt class="bp-field-name bp-field-id-18">State</dt>
-        <dd class="bp-field-value bp-field-id-18"><p>{{state}}</p></dd>
-    </script>
-    <script id="template-activity-stream" type="text/template">
-        <li class="profile new_avatar activity-item mini{{has_comments}}" id="activity-38691">
-            <div class="activity-avatar">
-                <a href="/members/{{username}}/">
-                    <img src="{{avatar_url}}" class="avatar user-35356-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of {{username}}" style="display: inline-block;">
-                </a>
-            </div>
-            <div class="activity-content">
-                <div class="activity-header">
-                    <p>
-                        <a href="/members/{{username}}/">{{username}}</a>{{action}}<a href="/activity/p/38691/" class="view activity-time-since bp-tooltip" data-bp-tooltip="View Discussion">
-                            <span class="time-since">{{time_since}} ago</span>
-                        </a>
-                    </p>
-                </div>
-                <div class="activity-meta"></div>
-            </div>
-            <div class="activity-comments">{{comments}}</div>
-        </li>
-    </script>
-    <script id="template-activity-stream-comment" type="text/template">
-        <ul>
-            <li id="acomment-38814">
-                <div class="acomment-avatar">
-                    <a href="">
-                        <img src="{{avatar_url}}" class="avatar user-179-avatar avatar-120 photo" width="120" height="120" alt="Profile picture">      
+        <script id="template-profile-about-me" type="text/template">
+            <dt class="bp-field-name bp-field-id-1">Name</dt>
+            <dd class="bp-field-value bp-field-id-1"><p>{{name}}</p></dd>
+            <dt class="bp-field-name bp-field-id-3">I am a</dt>
+            <dd class="bp-field-value bp-field-id-3"><p><a href="/members/?members_search={{iso_sex1}}" rel="nofollow">{{iso_sex1}}</a></p></dd>
+            <dt class="bp-field-name bp-field-id-6">Looking for a</dt>
+            <dd class="bp-field-value bp-field-id-6"><p><a href="/members/?members_search={{iso_sex2}}" rel="nofollow">{{iso_sex2}}</a></p></dd>
+            <dt class="bp-field-iso bp-field-id-23">for a...</dt>
+            <dd class="bp-field-value bp-field-id-23"><p>{{iso}}</p></dd>
+            <dt class="bp-field-name bp-field-id-2">Birthday</dt>
+            <dd class="bp-field-value bp-field-id-2"><p>{{birthday}}</p></dd>
+            <dt class="bp-field-name bp-field-id-9">Marital status</dt>
+            <dd class="bp-field-value bp-field-id-9"><p><a href="/members/?members_search={{marital_status}}" rel="nofollow">{{marital_status}}</a></p></dd>
+            <dt class="bp-field-name bp-field-id-17">City</dt>
+            <dd class="bp-field-value bp-field-id-17"><p>{{city}}</p></dd>
+            <dt class="bp-field-name bp-field-id-18">State</dt>
+            <dd class="bp-field-value bp-field-id-18"><p>{{state}}</p></dd>
+        </script>
+        <script id="template-activity-stream" type="text/template">
+            <li class="profile new_avatar activity-item mini{{has_comments}}" id="activity-38691">
+                <div class="activity-avatar">
+                    <a href="/members/{{username}}/">
+                        <img src="{{avatar_url}}" class="avatar user-35356-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of {{username}}" style="display: inline-block;">
                     </a>
                 </div>
-                <div class="acomment-meta">
-                    <a href="">User {{username}}</a> replied <a href="" class="activity-time-since"><span class="time-since">{{time_ago}}</span></a>    
+                <div class="activity-content">
+                    <div class="activity-header">
+                        <p>
+                            <a href="/members/{{username}}/">{{username}}</a>{{action}}<a href="/activity/p/38691/" class="view activity-time-since bp-tooltip" data-bp-tooltip="View Discussion">
+                                <span class="time-since">{{time_since}} ago</span>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="activity-meta"></div>
                 </div>
-                <div class="acomment-content"><p>rttr</p></div>
-                <div class="acomment-options"></div>
+                <div class="activity-comments">{{comments}}</div>
             </li>
-        </ul>
-    </script>
-    <link rel="stylesheet" type="text/css" href="./css/profile.css">
+        </script>
+        <script id="template-activity-stream-comment" type="text/template">
+            <ul>
+                <li id="acomment-38814">
+                    <div class="acomment-avatar">
+                        <a href="">
+                            <img src="{{avatar_url}}" class="avatar user-179-avatar avatar-120 photo" width="120" height="120" alt="Profile picture">      
+                        </a>
+                    </div>
+                    <div class="acomment-meta">
+                        <a href="">User {{username}}</a> replied <a href="" class="activity-time-since"><span class="time-since">{{time_ago}}</span></a>    
+                    </div>
+                    <div class="acomment-content"><p>rttr</p></div>
+                    <div class="acomment-options"></div>
+                </li>
+            </ul>
+        </script>
+        
+        <link rel="stylesheet" type="text/css" href="./css/profile.css">
+
         <div id="wrapper">
             <section>
                 <div class="dynamicContent">
-<!-- PROFILE SECTION 
-        ================================================ -->
-        <section>
-            <div id="profile">
-                <a id="header-cover-image"></a>
-                <div class="row">
-                    <div class="five columns">
-                        <h2></h2>
-                        <span class="user-nicename"></span>
-                        <span id="last_active_ago" class="activity"></span>
-                        <p>&nbsp;</p>
-                        <div class="row">
-                            <div id="item-header-avatar" class="eight columns image-hover">
-                                <!-- <img src="./images/profile/5a202fc80dacc-bpfull.jpg" class="avatar avatar-580 photo" width="580" height="580" alt="Profile picture">                        -->
-                            </div>
-                            <div class="two columns pull-two">
-                                <div id="item-buttons">
-                                    <div id="friendship-button-" class="generic-button friendship-button not_friends">
-                                        <a data-reveal-id="login_panel" class="has-tip tip-right friendship-button not_friends add" data-width="350" rel="add" id="friend-" title="Please Login to Add Friend" href="#">Add Friend</a>
+                    <!-- PROFILE SECTION ================================================ -->
+                    <section>
+                        <div id="profile">
+                            <span><a href="gallery.html">< Back To Gallery</a></span>
+                            <a id="header-cover-image"></a>
+                            <div class="row">
+                                <div class="five columns">
+                                    <h2></h2>
+                                    <span class="user-nicename"></span>
+                                    <span id="last_active_ago" class="activity"></span>
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                        <div id="item-header-avatar" class="eight columns image-hover"></div>
+                                        <div class="two columns pull-two">
+                                            <div id="item-buttons">
+                                                <div id="friendship-button-" class="generic-button friendship-button not_friends">
+                                                    <a class="has-tip tip-right friendship-button not_friends add" title="Please Login to Add Friend" href="#">Add Friend</a>
+                                                </div>
+                                                <div id="post-mention" class="generic-button">
+                                                    <a class="has-tip tip-right activity-button mention" data-width="350" title="Please Login to Send a public message">Public Message</a>
+                                                </div>
+                                                <div id="send-private-message" class="generic-button">
+                                                    <a class="has-tip tip-right send-message" title="Please Login to Send a private message">Private Message</a>
+                                                </div>                                    
+                                            </div>
+                                            <!-- #item-buttons -->
+                                        </div>
                                     </div>
-                                    <div id="post-mention" class="generic-button">
-                                        <a data-reveal-id="login_panel" class="has-tip tip-right activity-button mention" data-width="350" title="Please Login to Send a public message" href="#">Public Message</a>
+                                    <!--end row-->
+                                </div>
+                                <!--end five-->
+                
+                                <div class="seven columns">
+                                    <dl class="tabs pill custom">
+                                        <dd class="active">
+                                            <a href="#about-me">About me</a>
+                                        </dd>
+                                    </dl>
+                                    <ul class="tabs-content custom">
+                                        <li id="looking-forTab" class=" citetab"></li>
+                                        <li active="" id="about-meTab" class="active regulartab">
+                                            <dl class="dl-horizontal"></dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--end row-->
+                        </div>
+                        <!--end profile-->
+                    </section>
+                    <!--END PROFILE SECTION-->
+
+                    <!-- MAIN SECTION ================================================ -->
+                    <section>
+                        <div id="main">
+                            <div class="row">
+                                <!--begin content-->
+                                <div id="main-content" class="eight columns ">
+                                    <div class="row">
+                                        <div class="twelve columns">
+                                            <div class="article-content">
+                                                <div id="buddypress">
+                                                    <div id="item-nav">
+                                                        <div class="item-list-tabs no-ajax" id="object-nav" aria-label="Member primary navigation" role="navigation">
+                                                            <ul>
+                                                                <li id="activity-personal-li" class="current selected"><a id="user-activity">Activity</a></li>
+                                                                <li id="xprofile-personal-li"><a id="user-xprofile">Profile</a></li>
+                                                                <li id="friends-personal-li"><a id="user-friends">Friends <span class="no-count">0</span></a></li>
+                                                                <li id="groups-personal-li"><a id="user-groups">Groups <span class="no-count">0</span></a></li>
+                                                                <li id="forums-personal-li"><a id="user-forums">Forums</a></li>
+                                                                <li id="media-personal-li"><a id="user-media">Media <span>0</span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <!-- #item-nav -->
+                                                    
+                                                    <div id="item-body">
+                                                        <div class="item-list-tabs no-ajax" id="subnav" aria-label="Member secondary navigation" role="navigation">
+                                                            <ul>
+                                                                <li id="just-me-personal-li" class="current selected"><a id="just-me" href="#">Personal</a></li>
+                                                                <li id="activity-mentions-personal-li"><a id="activity-mentions" href="#">Mentions</a></li>
+                                                                <li id="activity-favs-personal-li"><a id="activity-favs" href="#">Favorites</a></li>
+                                                                <li id="activity-friends-personal-li"><a id="activity-friends" href="#">Friends</a></li>
+                                                                <li id="activity-groups-personal-li"><a id="activity-groups" href="#">Groups</a></li>
+                                                                <li id="activity-filter-select" class="last">
+                                                                    <label for="activity-filter-by">Show:</label>
+                                                                    <select id="activity-filter-by">
+                                                                        <option value="-1">— Everything —</option>
+                                                                        <option value="activity_update">Updates</option>
+                                                                        <option value="friendship_accepted,friendship_created">Friendships</option>
+                                                                        <option value="group_details_updated">Group Updates</option>
+                                                                        <option value="created_group">New Groups</option>
+                                                                        <option value="joined_group">Group Memberships</option>
+                                                                        <option value="new_blog_post">Posts</option>
+                                                                        <option value="new_blog_comment">Comments</option>                
+                                                                        <option value="bbp_topic_create">Topics</option>
+                                                                        <option value="bbp_reply_create">Replies</option>
+                                                                   </select>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <!-- .item-list-tabs -->
+
+                                                        <div class="activity" aria-live="polite" aria-atomic="true" aria-relevant="all">
+                                                            <ul id="activity-stream" class="activity-list item-list">
+                                                                <li class="load-more">
+                                                                    <a href="#">Load More</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <!-- .activity -->
+                                                    </div>
+                                                    <!-- #item-body -->
+                                                </div>
+                                                <!-- #buddypress -->
+                                            </div>
+                                            <!--end article-content-->
+                                        </div>
+                                        <!--end twelve-->
                                     </div>
-                                    <div id="send-private-message" class="generic-button">
-                                        <a data-reveal-id="login_panel" class="has-tip tip-right send-message" data-width="350" title="Please Login to Send a private message" href="#">Private Message</a>
-                                    </div>                                    
+                                    <!--end row-->
+                                    <!-- End  Article -->
                                 </div>
-                                <!-- #item-buttons -->
-                            </div>
-                        </div>
-                        <!--end row-->
-                    </div>
-                    <!--end five-->
-    
-                    <div class="seven columns">
-                        <dl class="tabs pill custom">
-                            <dd class="active">
-                                <a href="#about-me">About me</a>
-                            </dd>
-                        </dl>
-                        <ul class="tabs-content custom">
-                            <li id="looking-forTab" class=" citetab"></li>
-                            <li active="" id="about-meTab" class="active regulartab">
-                                <dl class="dl-horizontal"></dl>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--end row-->
-            </div>
-            <!--end profile-->
-        </section>
-        <!--END PROFILE SECTION-->
-
-        <!-- MAIN SECTION
-        ================================================ -->
-        <section>
-            <div id="main">
-                <div class="row">
-                    <!--begin content-->
-                    <div id="main-content" class="eight columns ">
-                        <div class="row">
-                            <div class="twelve columns">
-                                <div class="article-content">
-                                    <div id="buddypress">
-                                        <div id="item-nav">
-                                            <div class="item-list-tabs no-ajax" id="object-nav" aria-label="Member primary navigation" role="navigation">
-                                                <ul>
-                                                    <li id="activity-personal-li" class="current selected"><a id="user-activity">Activity</a></li>
-                                                    <li id="xprofile-personal-li"><a id="user-xprofile">Profile</a></li>
-                                                    <li id="friends-personal-li"><a id="user-friends">Friends <span class="no-count">0</span></a></li>
-                                                    <li id="groups-personal-li"><a id="user-groups">Groups <span class="no-count">0</span></a></li>
-                                                    <li id="forums-personal-li"><a id="user-forums">Forums</a></li>
-                                                    <li id="media-personal-li"><a id="user-media">Media <span>0</span></a></li>
-                                                </ul>
+                                <!--end content-->
+              
+                                <!-- SIDEBAR SECTION
+                                ================================================ -->
+                                <aside class="four columns">
+                                    <div class="widgets-container sidebar_location">
+                                        <div id="bp_core_members_widget-7" class="widgets clearfix widget_bp_core_members_widget buddypress widget">
+                                            <h5>Members</h5>        
+                                            <div class="item-options" id="members-list-options">
+                                                <a href="/members/" id="newest-members">Newest</a>
+                                                <span class="bp-separator" role="separator">|</span>
+                                                <a href="/members/" id="recently-active-members" class="selected">Active</a>
+                                                <span class="bp-separator" role="separator">|</span>
+                                                <a href="/members/" id="popular-members">Popular</a>
                                             </div>
+                                            <ul id="members-list" class="item-list" aria-live="polite" aria-relevant="all" aria-atomic="true">
+                                                <li class="vcard">
+                                                    <div class="item-avatar">
+                                                        <a href="/members/demo/" class="bp-tooltip" data-bp-tooltip="User demo"><img src="./images/profile/5a7842a119a6d-bpthumb.jpg" class="avatar user-179-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of User demo"></a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="item-title fn">
+                                                            <a href="/members/demo/">User demo</a>
+                                                        </div>
+                                                        <div class="item-meta">
+                                                            <span class="activity">3 hours ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="vcard">
+                                                    <div class="item-avatar">
+                                                        <a href="/members/robert-christopher/" class="bp-tooltip" data-bp-tooltip="robert-christopher">
+                                                            <img src="./images/profile/picture" class="avatar user-35452-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of robert-christopher"></a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="item-title fn">
+                                                            <a href="/members/robert-christopher/">robert-christopher</a>
+                                                        </div>
+                                                        <div class="item-meta">
+                                                            <span class="activity">a day ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="vcard">
+                                                    <div class="item-avatar">
+                                                        <a href="/members/john-david-crockett/" class="bp-tooltip" data-bp-tooltip="john-david-crockett">
+                                                            <img src="./images/profile/picture(1)" class="avatar user-34489-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of john-david-crockett">
+                                                        </a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="item-title fn">
+                                                            <a href="/members/john-david-crockett/">john-david-crockett</a>
+                                                        </div>
+                                                        <div class="item-meta">
+                                                            <span class="activity">a day ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="vcard">
+                                                    <div class="item-avatar">
+                                                        <a href="/members/eduardo-alves/" class="bp-tooltip" data-bp-tooltip="eduardo-alves">
+                                                            <img src="./images/profile/picture(2)" class="avatar user-35451-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of eduardo-alves">
+                                                        </a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="item-title fn">
+                                                            <a href="/members/eduardo-alves/">eduardo-alves</a>
+                                                        </div>
+                                                        <div class="item-meta">
+                                                            <span class="activity">4 days ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="vcard">
+                                                    <div class="item-avatar">
+                                                        <a href="/members/serafim-zagadochny/" class="bp-tooltip" data-bp-tooltip="serafim-zagadochny">
+                                                            <img src="./images/profile/picture(3)" class="avatar user-35450-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of serafim-zagadochny">
+                                                        </a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="item-title fn">
+                                                            <a href="/members/serafim-zagadochny/">serafim-zagadochny</a>
+                                                        </div>
+                                                        <div class="item-meta">
+                                                            <span class="activity">5 days ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            
+                                            <input type="hidden" id="_wpnonce-members" name="_wpnonce-members" value="945dcbfeae">
+                                            <input type="hidden" name="members_widget_max" id="members_widget_max" value="5">
                                         </div>
-                                        <!-- #item-nav -->
-                                        
-                                        <div id="item-body">
-                                            <div class="item-list-tabs no-ajax" id="subnav" aria-label="Member secondary navigation" role="navigation">
-                                                <ul>
-                                                    <li id="just-me-personal-li" class="current selected"><a id="just-me" href="/members/jasdeep-singh/activity/">Personal</a></li>
-                                                    <li id="activity-mentions-personal-li"><a id="activity-mentions" href="/members/jasdeep-singh/activity/mentions/">Mentions</a></li>
-                                                    <li id="activity-favs-personal-li"><a id="activity-favs" href="/members/jasdeep-singh/activity/favorites/">Favorites</a></li>
-                                                    <li id="activity-friends-personal-li"><a id="activity-friends" href="/members/jasdeep-singh/activity/friends/">Friends</a></li>
-                                                    <li id="activity-groups-personal-li"><a id="activity-groups" href="/members/jasdeep-singh/activity/groups/">Groups</a></li>
-                                                    <li id="activity-filter-select" class="last">
-                                                        <label for="activity-filter-by">Show:</label>
-                                                        <select id="activity-filter-by">
-                                                            <option value="-1">— Everything —</option>
-                                                            <option value="activity_update">Updates</option>
-                                                            <option value="friendship_accepted,friendship_created">Friendships</option>
-                                                            <option value="group_details_updated">Group Updates</option>
-                                                            <option value="created_group">New Groups</option>
-                                                            <option value="joined_group">Group Memberships</option>
-                                                            <option value="new_blog_post">Posts</option>
-                                                            <option value="new_blog_comment">Comments</option>                
-                                                            <option value="bbp_topic_create">Topics</option>
-                                                            <option value="bbp_reply_create">Replies</option>
-                                                       </select>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- .item-list-tabs -->
 
-                                            <div class="activity" aria-live="polite" aria-atomic="true" aria-relevant="all">
-                                                <ul id="activity-stream" class="activity-list item-list">
-                                                    <li class="load-more">
-                                                        <a href="/members/jasdeep-singh/?acpage=2">Load More</a>
-                                                    </li>
-                                                </ul>
+                                        <div id="bp_groups_widget-5" class="widgets clearfix widget_bp_groups_widget buddypress widget">
+                                            <h5>Groups</h5>
+                                            <div class="item-options" id="groups-list-options">
+                                                <a href="/groups/" id="newest-groups">Newest</a>
+                                                <span class="bp-separator" role="separator">|</span>
+                                                <a href="/groups/" id="recently-active-groups" class="selected">Active</a>
+                                                <span class="bp-separator" role="separator">|</span>
+                                                <a href="/groups/" id="popular-groups">Popular</a>
+                                                <span class="bp-separator" role="separator">|</span>
+                                                <a href="/groups/" id="alphabetical-groups">Alphabetical</a>
                                             </div>
-                                            <!-- .activity -->
+
+                                            <ul id="groups-list" class="item-list" aria-live="polite" aria-relevant="all" aria-atomic="true">
+                                                <li class="odd public group-has-avatar">
+                                                    <div class="item-avatar">
+                                                        <a href="/groups/couples/" class="bp-tooltip" data-bp-tooltip="Couples"><img src="./images/profile/9458c0f0a7b14da7113731e2bb728e18-bpthumb.png" class="avatar group-1-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Couples"></a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="item-title"><a href="/groups/couples/" class="bp-group-home-link couples-home-link">Couples</a></div>
+                                                        <div class="item-meta">
+                                                            <span class="activity">active 1 week, 2 days ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="even public group-has-avatar">
+                                                    <div class="item-avatar">
+                                                        <a href="/groups/site-lovers/" class="bp-tooltip" data-bp-tooltip="Site lovers"><img src="./images/profile/e206e412862fb75fb0a2de76e08f65b5-bpthumb.jpg" class="avatar group-2-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Site lovers"></a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="item-title"><a href="/groups/site-lovers/" class="bp-group-home-link site-lovers-home-link">Site lovers</a></div>
+                                                        <div class="item-meta">
+                                                            <span class="activity">active 1 month ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="odd public group-has-avatar">
+                                                    <div class="item-avatar">
+                                                        <a href="/groups/fast-food-junkies/" class="bp-tooltip" data-bp-tooltip="Fast food Junkies"><img src="./images/profile/3972d959ae380e0b63d868aef8c43328-bpthumb.jpg" class="avatar group-66-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Fast food Junkies"></a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="item-title"><a href="/groups/fast-food-junkies/" class="bp-group-home-link fast-food-junkies-home-link">Fast food Junkies</a></div>
+                                                        <div class="item-meta">
+                                                            <span class="activity">active 1 month, 2 weeks ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="even public group-has-avatar">
+                                                    <div class="item-avatar">
+                                                        <a href="/groups/virtual-only/" class="bp-tooltip" data-bp-tooltip="Virtual only"><img src="./images/profile/a1071409170939d689457fae71708145-bpthumb.png" class="avatar group-3-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Virtual only"></a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="item-title"><a href="/groups/virtual-only/" class="bp-group-home-link virtual-only-home-link">Virtual only</a></div>
+                                                        <div class="item-meta">
+                                                            <span class="activity">active 4 months ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="odd private group-has-avatar">
+                                                    <div class="item-avatar">
+                                                        <a href="/groups/vip-users/" class="bp-tooltip" data-bp-tooltip="VIP Users"><img src="./images/profile/50b4ae2fffd8596b684c7d2111b9e1c9-bpthumb.png" class="avatar group-6-avatar avatar-120 photo" width="120" height="120" alt="Group logo of VIP Users"></a>
+                                                    </div>
+
+                                                    <div class="item">
+                                                        <div class="item-title"><a href="/groups/vip-users/" class="bp-group-home-link vip-users-home-link">VIP Users</a></div>
+                                                        <div class="item-meta">
+                                                            <span class="activity">active 4 years, 6 months ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            
+                                            <input type="hidden" id="_wpnonce-groups" name="_wpnonce-groups" value="276ce3cac7">
+                                            <input type="hidden" name="_wp_http_referer" value="/members/jasdeep-singh/">          
+                                            <input type="hidden" name="groups_widget_max" id="groups_widget_max" value="5">       
                                         </div>
-                                        <!-- #item-body -->
+
+                                        <div id="bbp_replies_widget-3" class="widgets clearfix widget_display_replies">
+                                            <h5>Recent Replies</h5>
+                                            <ul>
+                                                <li><a class="bbp-reply-topic-title" href="/forums/topic/od-kiedz-jestes-wege/#post-6954" title="lol">Od kiedz jestes wege</a></li>
+                                                <li><a class="bbp-reply-topic-title" href="/forums/topic/so-im-cheating-my-boyfriend-with-my-self-and-that-thing-kills-me/#post-6925" title="blan blan">So I'm cheating my boyfriend with my self and that thing kills me</a></li>
+                                                <li><a class="bbp-reply-topic-title" href="/forums/topic/so-im-cheating-my-boyfriend-with-my-self-and-that-thing-kills-me/#post-6717" title="ok">So I'm cheating my boyfriend with my self and that thing kills me</a></li>
+                                                <li><a class="bbp-reply-topic-title" href="/forums/topic/so-im-cheating-my-boyfriend-with-my-self-and-that-thing-kills-me/#post-6672" title="good coz ur bf is a sorry a*s p**sy lol        T…">So I'm cheating my boyfriend with my self and that thing kills me</a></li>
+                                                <li><a class="bbp-reply-topic-title" href="/forums/topic/age-difference/#post-6651" title="Any age difference is fine, I think. So far, they…">Age Difference</a></li>
+                                            </ul>
+                                        </div>  
                                     </div>
-                                    <!-- #buddypress -->
-                                </div>
-                                <!--end article-content-->
+                                </aside> 
+                                <!--end four columns-->
+                                <!--END SIDEBAR SECTION-->
                             </div>
-                            <!--end twelve-->
+                            <!--end row-->
                         </div>
-                        <!--end row-->
-                        <!-- End  Article -->
-                    </div>
-                    <!--end content-->
-  
-                    <!-- SIDEBAR SECTION
-                    ================================================ -->
-                    <aside class="four columns">
-                        <div class="widgets-container sidebar_location">
-                            <div id="bp_core_members_widget-7" class="widgets clearfix widget_bp_core_members_widget buddypress widget">
-                                <h5>Members</h5>        
-                                <div class="item-options" id="members-list-options">
-                                    <a href="/members/" id="newest-members">Newest</a>
-                                    <span class="bp-separator" role="separator">|</span>
-                                    <a href="/members/" id="recently-active-members" class="selected">Active</a>
-                                    <span class="bp-separator" role="separator">|</span>
-                                    <a href="/members/" id="popular-members">Popular</a>
-                                </div>
-                                <ul id="members-list" class="item-list" aria-live="polite" aria-relevant="all" aria-atomic="true">
-                                    <li class="vcard">
-                                        <div class="item-avatar">
-                                            <a href="/members/demo/" class="bp-tooltip" data-bp-tooltip="User demo"><img src="./images/profile/5a7842a119a6d-bpthumb.jpg" class="avatar user-179-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of User demo"></a>
-                                        </div>
-                                        <div class="item">
-                                            <div class="item-title fn">
-                                                <a href="/members/demo/">User demo</a>
-                                            </div>
-                                            <div class="item-meta">
-                                                <span class="activity">3 hours ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="vcard">
-                                        <div class="item-avatar">
-                                            <a href="/members/robert-christopher/" class="bp-tooltip" data-bp-tooltip="robert-christopher">
-                                                <img src="./images/profile/picture" class="avatar user-35452-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of robert-christopher"></a>
-                                        </div>
-                                        <div class="item">
-                                            <div class="item-title fn">
-                                                <a href="/members/robert-christopher/">robert-christopher</a>
-                                            </div>
-                                            <div class="item-meta">
-                                                <span class="activity">a day ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="vcard">
-                                        <div class="item-avatar">
-                                            <a href="/members/john-david-crockett/" class="bp-tooltip" data-bp-tooltip="john-david-crockett">
-                                                <img src="./images/profile/picture(1)" class="avatar user-34489-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of john-david-crockett">
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <div class="item-title fn">
-                                                <a href="/members/john-david-crockett/">john-david-crockett</a>
-                                            </div>
-                                            <div class="item-meta">
-                                                <span class="activity">a day ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="vcard">
-                                        <div class="item-avatar">
-                                            <a href="/members/eduardo-alves/" class="bp-tooltip" data-bp-tooltip="eduardo-alves">
-                                                <img src="./images/profile/picture(2)" class="avatar user-35451-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of eduardo-alves">
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <div class="item-title fn">
-                                                <a href="/members/eduardo-alves/">eduardo-alves</a>
-                                            </div>
-                                            <div class="item-meta">
-                                                <span class="activity">4 days ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="vcard">
-                                        <div class="item-avatar">
-                                            <a href="/members/serafim-zagadochny/" class="bp-tooltip" data-bp-tooltip="serafim-zagadochny">
-                                                <img src="./images/profile/picture(3)" class="avatar user-35450-avatar avatar-120 photo" width="120" height="120" alt="Profile picture of serafim-zagadochny">
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <div class="item-title fn">
-                                                <a href="/members/serafim-zagadochny/">serafim-zagadochny</a>
-                                            </div>
-                                            <div class="item-meta">
-                                                <span class="activity">5 days ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                
-                                <input type="hidden" id="_wpnonce-members" name="_wpnonce-members" value="945dcbfeae">
-                                <input type="hidden" name="members_widget_max" id="members_widget_max" value="5">
-                            </div>
-
-                            <div id="bp_groups_widget-5" class="widgets clearfix widget_bp_groups_widget buddypress widget">
-                                <h5>Groups</h5>
-                                <div class="item-options" id="groups-list-options">
-                                    <a href="/groups/" id="newest-groups">Newest</a>
-                                    <span class="bp-separator" role="separator">|</span>
-                                    <a href="/groups/" id="recently-active-groups" class="selected">Active</a>
-                                    <span class="bp-separator" role="separator">|</span>
-                                    <a href="/groups/" id="popular-groups">Popular</a>
-                                    <span class="bp-separator" role="separator">|</span>
-                                    <a href="/groups/" id="alphabetical-groups">Alphabetical</a>
-                                </div>
-
-                                <ul id="groups-list" class="item-list" aria-live="polite" aria-relevant="all" aria-atomic="true">
-                                    <li class="odd public group-has-avatar">
-                                        <div class="item-avatar">
-                                            <a href="/groups/couples/" class="bp-tooltip" data-bp-tooltip="Couples"><img src="./images/profile/9458c0f0a7b14da7113731e2bb728e18-bpthumb.png" class="avatar group-1-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Couples"></a>
-                                        </div>
-                                        <div class="item">
-                                            <div class="item-title"><a href="/groups/couples/" class="bp-group-home-link couples-home-link">Couples</a></div>
-                                            <div class="item-meta">
-                                                <span class="activity">active 1 week, 2 days ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="even public group-has-avatar">
-                                        <div class="item-avatar">
-                                            <a href="/groups/site-lovers/" class="bp-tooltip" data-bp-tooltip="Site lovers"><img src="./images/profile/e206e412862fb75fb0a2de76e08f65b5-bpthumb.jpg" class="avatar group-2-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Site lovers"></a>
-                                        </div>
-                                        <div class="item">
-                                            <div class="item-title"><a href="/groups/site-lovers/" class="bp-group-home-link site-lovers-home-link">Site lovers</a></div>
-                                            <div class="item-meta">
-                                                <span class="activity">active 1 month ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="odd public group-has-avatar">
-                                        <div class="item-avatar">
-                                            <a href="/groups/fast-food-junkies/" class="bp-tooltip" data-bp-tooltip="Fast food Junkies"><img src="./images/profile/3972d959ae380e0b63d868aef8c43328-bpthumb.jpg" class="avatar group-66-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Fast food Junkies"></a>
-                                        </div>
-                                        <div class="item">
-                                            <div class="item-title"><a href="/groups/fast-food-junkies/" class="bp-group-home-link fast-food-junkies-home-link">Fast food Junkies</a></div>
-                                            <div class="item-meta">
-                                                <span class="activity">active 1 month, 2 weeks ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="even public group-has-avatar">
-                                        <div class="item-avatar">
-                                            <a href="/groups/virtual-only/" class="bp-tooltip" data-bp-tooltip="Virtual only"><img src="./images/profile/a1071409170939d689457fae71708145-bpthumb.png" class="avatar group-3-avatar avatar-120 photo" width="120" height="120" alt="Group logo of Virtual only"></a>
-                                        </div>
-                                        <div class="item">
-                                            <div class="item-title"><a href="/groups/virtual-only/" class="bp-group-home-link virtual-only-home-link">Virtual only</a></div>
-                                            <div class="item-meta">
-                                                <span class="activity">active 4 months ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="odd private group-has-avatar">
-                                        <div class="item-avatar">
-                                            <a href="/groups/vip-users/" class="bp-tooltip" data-bp-tooltip="VIP Users"><img src="./images/profile/50b4ae2fffd8596b684c7d2111b9e1c9-bpthumb.png" class="avatar group-6-avatar avatar-120 photo" width="120" height="120" alt="Group logo of VIP Users"></a>
-                                        </div>
-
-                                        <div class="item">
-                                            <div class="item-title"><a href="/groups/vip-users/" class="bp-group-home-link vip-users-home-link">VIP Users</a></div>
-                                            <div class="item-meta">
-                                                <span class="activity">active 4 years, 6 months ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                
-                                <input type="hidden" id="_wpnonce-groups" name="_wpnonce-groups" value="276ce3cac7">
-                                <input type="hidden" name="_wp_http_referer" value="/members/jasdeep-singh/">          
-                                <input type="hidden" name="groups_widget_max" id="groups_widget_max" value="5">       
-                            </div>
-
-                            <div id="bbp_replies_widget-3" class="widgets clearfix widget_display_replies">
-                                <h5>Recent Replies</h5>
-                                <ul>
-                                    <li><a class="bbp-reply-topic-title" href="/forums/topic/od-kiedz-jestes-wege/#post-6954" title="lol">Od kiedz jestes wege</a></li>
-                                    <li><a class="bbp-reply-topic-title" href="/forums/topic/so-im-cheating-my-boyfriend-with-my-self-and-that-thing-kills-me/#post-6925" title="blan blan">So I'm cheating my boyfriend with my self and that thing kills me</a></li>
-                                    <li><a class="bbp-reply-topic-title" href="/forums/topic/so-im-cheating-my-boyfriend-with-my-self-and-that-thing-kills-me/#post-6717" title="ok">So I'm cheating my boyfriend with my self and that thing kills me</a></li>
-                                    <li><a class="bbp-reply-topic-title" href="/forums/topic/so-im-cheating-my-boyfriend-with-my-self-and-that-thing-kills-me/#post-6672" title="good coz ur bf is a sorry a*s p**sy lol        T…">So I'm cheating my boyfriend with my self and that thing kills me</a></li>
-                                    <li><a class="bbp-reply-topic-title" href="/forums/topic/age-difference/#post-6651" title="Any age difference is fine, I think. So far, they…">Age Difference</a></li>
-                                </ul>
-                            </div>  
-                        </div>
-                    </aside> 
-                    <!--end four columns-->
-                    <!--END SIDEBAR SECTION-->
-                </div>
-                <!--end row-->
-            </div>
-            <!--end main-->
-        </section>
-        <!--END MAIN SECTION-->
+                        <!--end main-->
+                    </section>
+                    <!--END MAIN SECTION-->
                     <!--content end -->
                 </div>
             </section>
