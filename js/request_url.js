@@ -1,19 +1,16 @@
 if (location.protocol != "file:") {
     var siteHref = document.location.href, sitePath = location.pathname.slice(0, location.pathname.lastIndexOf("/") + 1), IE='\v'=='v', hashString = (window.navigator.userAgent.indexOf('MSIE')!= -1)?"/#/":"?";
 
+// console.log(siteHref);
+// console.log(sitePath);
+// console.log(hashString);
 
-console.log(siteHref);
-console.log(sitePath);
-console.log(hashString);
+// console.log(".html " +(siteHref.lastIndexOf(".html") != -1));
+// console.log(".htm "+(siteHref.lastIndexOf(".htm") != -1));
 
-console.log(".html " +(siteHref.lastIndexOf(".html") != -1));
-console.log(".htm "+(siteHref.lastIndexOf(".htm") != -1));
-
-console.log("/? "+(siteHref.lastIndexOf("/?") == -1));
-console.log("/# "+(siteHref.lastIndexOf("/#") == -1));
-console.log("index. "+(siteHref.lastIndexOf("index.") == -1));
-
-
+// console.log("/? "+(siteHref.lastIndexOf("/?") == -1));
+// console.log("/# "+(siteHref.lastIndexOf("/#") == -1));
+// console.log("index. "+(siteHref.lastIndexOf("index.") == -1));
 
     if (siteHref.lastIndexOf(".html") != -1 && siteHref.lastIndexOf("/?") == -1 && siteHref.lastIndexOf("/#") == -1 && siteHref.lastIndexOf("index.") == -1 || siteHref.lastIndexOf(".htm") != -1 && siteHref.lastIndexOf("/?") == -1 && siteHref.lastIndexOf("/#") == -1 && siteHref.lastIndexOf("index.") == -1 && siteHref.lastIndexOf("/?") == -1 && siteHref.lastIndexOf("/#") == -1 && siteHref.lastIndexOf("index.") == -1) {
 		// document.location.href = siteHref.slice(0, siteHref.lastIndexOf("/"))+'/'+hashString+siteHref.slice(siteHref.lastIndexOf("/") + 1, siteHref.length);

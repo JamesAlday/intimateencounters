@@ -1,0 +1,39 @@
+{
+    "global": {
+        "username": "MakeMeWriteBackChecks",
+        "avatar_url": "./images/profile/5a202fc80dacc-bpfull.jpg"
+    },
+    "about":{
+        "name": "Robert Hoff",
+        "birthday": "1992-01-01",
+        "city":"New York",
+        "state":"NY",
+        "iso": "LTR",
+        "iso_sex1": "Woman",
+        "iso_sex2": "Man",
+        "marital_status": "Single"
+    },
+    
+    "last_active_ago": "2 weeks",
+   
+    "activities": [
+        {
+            "action": " changed their profile picture ",
+            "time_since": "2 months",
+            "has_comments": "",
+            "comments": ""
+        },
+        {
+            "action": "‘s profile was updated ",
+            "time_since": "2 months",
+            "has_comments": "",
+            "comments": [
+                {
+                    "avatar_url": "./images/profile/5a7842a119a6d-bpthumb.jpg",
+                    "username": "anonymous",
+                    "time_ago": "a week ago"
+                }
+            ]
+        }
+    ]
+}

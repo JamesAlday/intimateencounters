@@ -4,47 +4,6 @@ String.prototype.replaceAll = function (replaceThis, withThis) {
 };
 
 $(document).ready ( function() {
-    var users = {
-        "CableSnake69": {
-            "global": {
-                "username": "CableSnake69",
-                "avatar_url": "./sweetdate/images/5a202fc80dacc-bpfull.jpg",
-            },
-            "about":{
-                "name": "David Eugenson",
-                "birthday": "1992-01-01",
-                "city":"New York",
-                "state":"NY",
-                "iso_sex1": "Man",
-                "iso_sex2": "Woman",
-                "marital_status": "Single",
-            },
-            
-            "last_active_ago": "2 weeks",
-           
-            "activities": [
-                {
-                    "action": " changed their profile picture ",
-                    "time_since": "2 months",
-                    "has_comments": "",
-                    "comments": "",
-                },
-                {
-                    "action": "‘s profile was updated ",
-                    "time_since": "2 months",
-                    "has_comments": "",
-                    "comments": [
-                        {
-                            "avatar_url": "./sweetdate/images/5a7842a119a6d-bpthumb.jpg",
-                            "username": "anonymous",
-                            "time_ago": "a week ago"
-                        }
-                    ],
-                },
-            ]
-        }
-    };
-
     /**
      * template = template html, variables = object to use in tag replacement
      */
@@ -61,38 +20,39 @@ $(document).ready ( function() {
     }
 
     function loadTemplates() {
-        // Pick user from data array
         let params = (new URL(location)).searchParams;
         let userKey = params.get('user');
-        let user = users[userKey] || users["CableSnake69"];
 
-        // avatar image
-        loadImage(user.global.avatar_url, 580, null, "#item-header-avatar")
+        $.getJSON( "/js/json/" + userKey + ".json", function( user ) {
+            // avatar image
+            loadImage(user.global.avatar_url, 580, null, "#item-header-avatar");
 
-        // name/username
-        $("div.five.columns h2").html(user.about.name);
-        $("user-nicename").html("@" + user.global.username);
+            // // name/username
+            $("div.five.columns h2").html(user.about.name);
+            $("user-nicename").html("@" + user.global.username);
 
-        // last active time
-        $("#last_active_ago").html("<i class='icon-time'></i> active " + user.last_active_ago + " ago");
+            // last active time
+            $("#last_active_ago").html("<i class='icon-time'></i> active " + user.last_active_ago + " ago");
 
-        // Fill JS templates
-        var templates = {
-            "#template-profile-about-me": "about"
-        };
+            // Fill JS templates
+            var templates = {
+                "#template-profile-about-me": "about"
+                // groups, members, replies
+            };
 
-        var aboutHtml = "";
-        Object.keys(templates).forEach(function(key) {
-            var template = $(key).html();
-            var variables = Object.assign(user['global'], user[templates[key]]);
+            var aboutHtml = "";
+            Object.keys(templates).forEach(function(key) {
+                var template = $(key).html();
+                var variables = Object.assign(user['global'], user[templates[key]]);
 
-            aboutHtml += updateTemplate(template, variables);
+                aboutHtml += updateTemplate(template, variables);
+            });
+
+            // // About Me
+            $("#about-meTab .dl-horizontal:first").html(aboutHtml);
+
+            loadActivityStream(user);
         });
-
-        // About Me
-        $("#about-meTab .dl-horizontal:first").html(aboutHtml);
-
-        loadActivityStream(user);
     }
 
     function loadActivityStream(user) {
@@ -125,12 +85,13 @@ $(document).ready ( function() {
         $("#activity-stream").html(activityHtml)
     }
 
-    // Does the thing with the stuff
-    loadTemplates();
-
     function loadImage(path, width, height, target) {
         $('<img src="'+ path +'">').load(function() {
           $(this).width(width).height(height).appendTo(target);
         });
     }
+
+    // Does the thing with the stuff
+    loadTemplates();
+    
 });

@@ -1,5 +1,5 @@
 .header-bg {
-    background:#0076A3 url("./sweetdate/images/blue_pattern.gif"); 
+    background:#0076A3 url("./images/profile/blue_pattern.gif"); 
 }
 #header, #header .form-header .lead, #header label {color:#ffffff;} 
 #header a:not(.button), div#main .widgets-container.sidebar_location .form-search a:not(.button), .form-search.custom input[type="text"],.form-search.custom input[type="password"], .form-search.custom select {color:#ffffff;} 
