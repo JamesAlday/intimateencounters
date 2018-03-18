@@ -1,0 +1,21 @@
+/*================= Contacts =========================*/
+
+#note{ width:710px;}
+.notification_error{ color:#f00; margin-bottom:5px }
+.notification_ok{ text-align: center;} 
+
+#ajax-contact-form label{float:left; width: 100px; line-height:31px; color:#444444;}
+#ajax-contact-form label.c{ margin-top:5px;}
+
+#ajax-contact-form input{ float:left; width:330px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color: #444444; background: #fff; border: 1px solid #cac9c9; margin-bottom:5px; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;  padding:10px 10px;-moz-box-shadow: inset 2px 2px 5px #dedede; -webkit-box-shadow: inset 2px 2px  5px #dedede; box-shadow: inset 2px 2px 5px #dedede; margin-right: 0;}
+#ajax-contact-form input:focus{border-color:#9a9a9a; }
+
+#ajax-contact-form textarea{ float:left; width:330px; height:140px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color: #444444; background: #fff; border: 1px solid #cac9c9; margin-bottom:5px; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; padding:10px 10px; -moz-box-shadow: inset 2px 2px 5px #dedede; -webkit-box-shadow: inset 2px 2px  5px #dedede; box-shadow: inset 2px 2px 5px #dedede; margin-right: 0;}
+#ajax-contact-form textarea:focus{border-color:#9a9a9a; }
+
+#ajax-contact-form img{float:left; width:110px; height:45px; margin-top:5px; margin-left:0px;}
+
+#ajax-contact-form input.capthca{ float:left; width:105px; margin-top:0px; margin-right:10px;}
+
+#ajax-contact-form input.submit{float: right; width:111px; height:42px; cursor:pointer; background:url(../images/submit.png) left top no-repeat; border:none; margin:10px 0 0px 0px; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;  text-indent:-999%;box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; -o-box-shadow: none; }
+#ajax-contact-form input.submit:hover{ background-position:bottom;}
