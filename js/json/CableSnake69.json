@@ -1,7 +1,7 @@
 {
     "global": {
         "username": "CableSnake69",
-        "avatar_url": "./images/profile/5a202fc80dacc-bpfull.jpg"
+        "avatar_url": "./images/profile/CableSnake69-profile02.jpg"
     },
     "about":{
         "name": "David Eugenson",
@@ -21,7 +21,7 @@
             "action": " changed their profile picture ",
             "time_since": "2 months",
             "has_comments": "",
-            "comments": ""
+            "comments": "<img src='./images/profile/CableSnake69-profile01.jpg'>"
         },
         {
             "action": "‘s profile was updated ",
@@ -31,6 +31,7 @@
                 {
                     "avatar_url": "./images/profile/5a7842a119a6d-bpthumb.jpg",
                     "username": "anonymous",
+                    "comment": "rowr",
                     "time_ago": "a week ago"
                 }
             ]

@@ -166,6 +166,8 @@ $(document).ready(function() {
 
 });
 
+var admin = document.cookie.replace(/(?:(?:^|.*;\s*)admin\s*\=\s*([^;]*).*$)|^.*$/, "$1") == "true" || false;
+
 $(window).load(function() { 
     setTimeout(function () {                    
         $('#spinner').fadeOut();        

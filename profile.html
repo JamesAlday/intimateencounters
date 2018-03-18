@@ -53,7 +53,7 @@
                     <div class="acomment-meta">
                         <a href="">User {{username}}</a> replied <a href="" class="activity-time-since"><span class="time-since">{{time_ago}}</span></a>    
                     </div>
-                    <div class="acomment-content"><p>rttr</p></div>
+                    <div class="acomment-content"><p>{{comment}}</p></div>
                     <div class="acomment-options"></div>
                 </li>
             </ul>
@@ -389,6 +389,11 @@
 
                 // Does the thing with the stuff
                 profile.loadUser(profile.loadTemplates);
+
+                if (admin) {
+                    $('.admin-only').show();
+                }
+
             } else {
                 window.location = '/';
             }

@@ -25,7 +25,7 @@ var profile = {
 
         // // name/username
         $("div.five.columns h2").html(user.about.name);
-        $("user-nicename").html("@" + user.global.username);
+        $(".user-nicename").html("@" + user.global.username);
 
         // last active time
         $("#last_active_ago").html("<i class='icon-time'></i> active " + user.last_active_ago + " ago");
@@ -60,13 +60,15 @@ var profile = {
             if (i in activities) {
 
                 // Render comments
-                if (activities[i]['comments'].length > 0) {
+                if (Array.isArray(activities[i]['comments']) && activities[i]['comments'].length > 0) {
                     activities[i]['has_comments'] = " has-comments";
 
                     var comment_template = $("#template-activity-stream-comment").html();
                     // var comments = Object.assign(user['global'], activities[i]['comments']);
                     var commentsHtml = profile.updateTemplate(comment_template, activities[i]['comments']);
                     activities[i]['comments'] = commentsHtml;
+                } else {
+                    activities[i]['comments'] = "<ul class='admin-only'><li>" + activities[i]['comments'] + "</li></ul>";
                 }
 
                 // Render activity list
