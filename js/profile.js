@@ -3,59 +3,54 @@ String.prototype.replaceAll = function (replaceThis, withThis) {
    return this.replace(re, withThis);
 };
 
-$(document).ready ( function() {
+var profile = {
     /**
      * template = template html, variables = object to use in tag replacement
      */
-    function updateTemplate(template, variables) {
+    updateTemplate: function (template, variables) {
         Object.keys(variables).forEach(function(key) {
             if (typeof variables[key] === 'object') {
-                template = updateTemplate(template, variables[key]);
+                template = profile.updateTemplate(template, variables[key]);
             } else {
                 template = template.replaceAll("{{"+key+"}}", variables[key]);
             }
         });
 
         return template;
-    }
+    },
 
-    function loadTemplates() {
-        let params = (new URL(location)).searchParams;
-        let userKey = params.get('user');
+    loadTemplates: function (user) {
+        // avatar image
+        profile.loadImage(user.global.avatar_url, 580, null, "#item-header-avatar");
 
-        $.getJSON( "js/json/" + userKey + ".json", function( user ) {
-            // avatar image
-            loadImage(user.global.avatar_url, 580, null, "#item-header-avatar");
+        // // name/username
+        $("div.five.columns h2").html(user.about.name);
+        $("user-nicename").html("@" + user.global.username);
 
-            // // name/username
-            $("div.five.columns h2").html(user.about.name);
-            $("user-nicename").html("@" + user.global.username);
+        // last active time
+        $("#last_active_ago").html("<i class='icon-time'></i> active " + user.last_active_ago + " ago");
 
-            // last active time
-            $("#last_active_ago").html("<i class='icon-time'></i> active " + user.last_active_ago + " ago");
+        // Fill JS templates
+        var templates = {
+            "#template-profile-about-me": "about"
+            // groups, members, replies
+        };
 
-            // Fill JS templates
-            var templates = {
-                "#template-profile-about-me": "about"
-                // groups, members, replies
-            };
+        var aboutHtml = "";
+        Object.keys(templates).forEach(function(key) {
+            var template = $(key).html();
+            var variables = Object.assign(user['global'], user[templates[key]]);
 
-            var aboutHtml = "";
-            Object.keys(templates).forEach(function(key) {
-                var template = $(key).html();
-                var variables = Object.assign(user['global'], user[templates[key]]);
-
-                aboutHtml += updateTemplate(template, variables);
-            });
-
-            // // About Me
-            $("#about-meTab .dl-horizontal:first").html(aboutHtml);
-
-            loadActivityStream(user);
+            aboutHtml += profile.updateTemplate(template, variables);
         });
-    }
 
-    function loadActivityStream(user) {
+        // // About Me
+        $("#about-meTab .dl-horizontal:first").html(aboutHtml);
+
+        profile.loadActivityStream(user);
+    },
+
+    loadActivityStream: function (user) {
         // Load activity stream
         var activities = user.activities;
 
@@ -70,28 +65,43 @@ $(document).ready ( function() {
 
                     var comment_template = $("#template-activity-stream-comment").html();
                     // var comments = Object.assign(user['global'], activities[i]['comments']);
-                    var commentsHtml = updateTemplate(comment_template, activities[i]['comments']);
+                    var commentsHtml = profile.updateTemplate(comment_template, activities[i]['comments']);
                     activities[i]['comments'] = commentsHtml;
                 }
 
                 // Render activity list
                 var template = $("#template-activity-stream").html();
                 var variables = Object.assign(user['global'], activities[i]);
-                activityHtml += updateTemplate(template, variables);
+                activityHtml += profile.updateTemplate(template, variables);
             }
         }
 
         // Activity Stream
         $("#activity-stream").html(activityHtml)
-    }
+    },
 
-    function loadImage(path, width, height, target) {
+    loadImage: function (path, width, height, target) {
         $('<img src="'+ path +'">').load(function() {
           $(this).width(width).height(height).appendTo(target);
         });
-    }
+    },
 
-    // Does the thing with the stuff
-    loadTemplates();
-    
-});
+    loadUser: function (callback) {
+        let params = (new URL(location)).searchParams;
+        let userKey = params.get('user');
+
+        if (!userKey || userKey == "random") {
+            $.ajax({
+              url: 'https://randomuser.me/api/',
+              dataType: 'json',
+              success: function(data) {
+                console.log(data);
+              }
+            });
+        } else {
+            $.getJSON( "js/json/" + userKey + ".json", function(user) {
+                callback(user);
+            });
+        }
+    },
+};
