@@ -23,7 +23,7 @@ $(document).ready ( function() {
         let params = (new URL(location)).searchParams;
         let userKey = params.get('user');
 
-        $.getJSON( "/js/json/" + userKey + ".json", function( user ) {
+        $.getJSON( "./js/json/" + userKey + ".json", function( user ) {
             // avatar image
             loadImage(user.global.avatar_url, 580, null, "#item-header-avatar");
 
