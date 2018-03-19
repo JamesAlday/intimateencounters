@@ -4,99 +4,27 @@
     <title>gallery</title>
 </head>
 <body>
+    <script id="template-gallery-image" type="text/template">
+        <div class="gal1">
+            <div class="photo1">
+                <a href="profile.html?user={{username}}" title="Photo Title">
+                    <img src="{{avatar_url}}">
+                </a>
+            </div>
+            <p class="txt">
+                {{age}} / {{gender}} / <span style="text-transform:capitalize;">{{city}}</span>, {{state}}<br/>
+                @{{username}}
+            </p>
+        </div>
+    </script>
+
     <div id="wrapper">
         <section>
             <div class="dynamicContent">
                 <!--content -->
-                <div class="box">
+                <div class="box" id = "gallery">
                     <h1>Gallery</h1>
                     <h2>Our Gallery</h2>
-
-                    <div class="gal1">
-                        <div class="photo1">
-                            <a href="profile.html?user=CableSnake69" title="Photo Title">
-                                <img src="images/gallery/gallery01.jpg">
-                            </a>
-                        </div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="gal1">
-                        <div class="photo1">
-                            <a href="profile.html?user=BBW4U24" title="Photo Title"><img src="images/gallery/gallery02.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="gal1 last">
-                        <div class="photo1"><a href="profile.html?user=MakeMeWriteBackChecks" title="Photo Title"><img src="images/gallery/gallery03.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="clear"></div>
-                    
-                    <div class="gal1">
-                        <div class="photo1"><a href="profile.html?user=MTinoco1" title="Photo Title"><img src="images/gallery/gallery04.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="gal1">
-                        <div class="photo1"><a href="profile.html?user=ParkerScottisCan'tLose" title="Photo Title"><img src="images/gallery/gallery05.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="gal1 last">
-                        <div class="photo1"><a href="profile.html?user=Nalalalovies" title="Photo Title"><img src="images/gallery/gallery06.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="clear"></div>
-
-                    <div class="gal1">
-                        <div class="photo1"><a href="images/gallery/gallery07_big.jpg" title="Photo Title"><img src="images/gallery/gallery07.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-
-                    <div class="gal1">
-                        <div class="photo1"><a href="images/gallery/gallery08_big.jpg" rel="prettyPhoto[pp_gal1]" title="Photo Title"><img src="images/gallery/gallery08.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="gal1 last">
-                        <div class="photo1"><a href="images/gallery/gallery09_big.jpg" rel="prettyPhoto[pp_gal1]" title="Photo Title"><img src="images/gallery/gallery09.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="clear"></div>
-
-                    <div class="gal1">
-                        <div class="photo1"><a href="images/gallery/gallery10_big.jpg" rel="prettyPhoto[pp_gal1]" title="Photo Title"><img src="images/gallery/gallery10.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="gal1">
-                        <div class="photo1"><a href="images/gallery/gallery11_big.jpg" rel="prettyPhoto[pp_gal1]" title="Photo Title"><img src="images/gallery/gallery11.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="gal1 last">
-                        <div class="photo1"><a href="images/gallery/gallery12_big.jpg" rel="prettyPhoto[pp_gal1]" title="Photo Title"><img src="images/gallery/gallery12.jpg"></a></div>
-                        <p class="txt">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor 
-                        </p>
-                    </div>
-                    <div class="clear"></div>
                 </div>        
                 <!--content end -->
             </div>
@@ -104,7 +32,47 @@
     </div>
     <script>
         if (window.jQuery) {
-            // $("a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'dark',social_tools:false,allow_resize: true,default_width: 500,default_height: 344});
+            function calculateAge (birthDate) {
+                birthDate = new Date(birthDate);
+                otherDate = new Date();
+
+                var years = (otherDate.getFullYear() - birthDate.getFullYear());
+
+                if (otherDate.getMonth() < birthDate.getMonth() || 
+                    otherDate.getMonth() == birthDate.getMonth() && otherDate.getDate() < birthDate.getDate()) {
+                    years--;
+                }
+
+                return years;
+            }
+
+            $.ajax({
+                url: 'https://randomuser.me/api/?results=9&nat=us&inc=gender,name,email,login,registered,dob,id,picture,location',
+
+                dataType: 'json',
+                success: function(data) {
+                    var users = data.results;
+
+                    for (i in users) {
+                        var user_vars = {
+                            'username': users[i].login.username,
+                            'avatar_url': users[i].picture.large,
+                            'city': users[i].location.city,
+                            'state': profile.getState(users[i].location.state),
+                            'age': calculateAge(users[i].dob),
+                            'gender': users[i].gender
+                        };
+
+                        var template = $('#template-gallery-image').html();
+                        var picHtml = profile.updateTemplate(template, user_vars);
+                        
+                        $('#gallery').append(picHtml);
+                    }
+
+                    $('#gallery').append("<div class='clear'></div>");
+                }
+            });
+                
         } else {
             window.location = '/';
         }

@@ -193,11 +193,13 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 .community1.last{margin-right: 0;}
 .community1 .img{border:5px solid #dcd7d3;border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px; margin-bottom: 15px;}
 
-.gal1 { width:231px; padding-bottom:20px; float:left; margin-right:13px; }
+.gal1 { width:220px; padding-bottom:20px; float:left; margin-right:5px; }
+.gal1 .txt {margin:25px 0px 0px 15px;}
 .gal1.last { margin-right:0px; }
 
-.photo1 {width:231px; height:228px; margin-bottom:15px;}
+.photo1 {width:218px; height:218px; margin-bottom:15px;}
 .photo1 a img {border:10px solid #dcd7d3;border-radius:12px; -moz-border-radius:12px; -webkit-border-radius:12px;
 transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out;
 }
 .photo1 a:hover img{border-color: #d23a4c;}
+.photo1 img{width:218; height:218px;}
